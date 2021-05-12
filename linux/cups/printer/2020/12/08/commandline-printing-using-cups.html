@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>commandline printing using cups</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <div>
+    <nav>
+	<div class="header">
+		<h1>rustyelectron.live</h1>
+		
+		<a href="/"
+			
+			>
+			home
+		</a>
+		
+		<a href="/blog.html"
+			
+			>
+			blog
+		</a>
+		
+		<a href="https://twitter.com/rustyelectron"
+			 target=_blank 
+			>
+			twitter
+		</a>
+		
+		<a href="https://github.com/rusty-electron"
+			 target=_blank 
+			>
+			github
+		</a>
+		
+		</div>
+</nav>
+
+
+    
+    <div class='entry'>
+<h2>commandline printing using cups</h2>
+
+
+<small>tags:
+    [<span class="yellow">linux</span>][<span class="yellow">cups</span>][<span class="yellow">printer</span>]
+</small>
+
+
+<p>I wanted to set up printing with my HP Laserjet printer on my thinkpad, I have previously setup printing with this device on ElementaryOS so I know it works seamlessly with HPLIP. Now I wanted to replicate the same on my new machine. I looked up articles on printing on the archwiki and found something about CUPS. I started reading but due to my social media induced short attention-span, couldn’t read more than five lines, promised to read later and proceeded to install the package using <code class="language-plaintext highlighter-rouge">pacman</code>.</p>
+
+<p>I decided to ignore the gui tools and to my surprise, the web interface for CUPS is more than enough. It makes it easy to find, add and manage printer and its configurations like color settings, default paper size, margins, etc. The important part of setting up a new printer is choosing a <code class="language-plaintext highlighter-rouge">.ppd</code> file, CUPS comes packaged with a lot of <code class="language-plaintext highlighter-rouge">.ppd</code> files for working with generic printers. It did not have the file for my printer though so after reading the troubleshooting section I came to know that I needed to install the <code class="language-plaintext highlighter-rouge">hplip</code> package from the AUR. Once I did that, the printer began to accept printjobs from my laptop. Neat!</p>
+
+<p>For printing, open a file, if it has a full-fledged GUI click on the ‘print’ option or else ubiquitous shortcuts like ‘Ctrl+P’ work even on minimalist programs like ‘zathura’. The print dialog box in linux has most of the required options. For my config, the ‘preview’ button probably wasn’t set up and it printed the file instead. <em>TODO: find a fix for it</em></p>
+
+<p>CUPS is well-suited for commandline printing. The command given below should fulfill most of your needs. If it doesn’t, I’ll try to add more commands for common use-cases. <em>TODO: add more commands</em></p>
+
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nv">$ </span>lp <span class="nt">-d</span> printername <span class="nt">-o</span> landscape <span class="nt">-o</span> fit-to-page <span class="nt">-o</span> <span class="nv">media</span><span class="o">=</span>A4 filename
+</code></pre></div></div>
+
+
+<small><em> Tue, 08 Dec 2020 21:36:30 +0530 </em></small>
+</div>
+
+    
+    
+  </body>
+</html>

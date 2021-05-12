@@ -1,0 +1,73 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>mosh - for laggy ssh connections</title>
+    <link rel="stylesheet" href="/assets/css/styles.css">
+  </head>
+  <body>
+    <div>
+    <nav>
+	<div class="header">
+		<h1>rustyelectron.live</h1>
+		
+		<a href="/"
+			
+			>
+			home
+		</a>
+		
+		<a href="/blog.html"
+			
+			>
+			blog
+		</a>
+		
+		<a href="https://twitter.com/rustyelectron"
+			 target=_blank 
+			>
+			twitter
+		</a>
+		
+		<a href="https://github.com/rusty-electron"
+			 target=_blank 
+			>
+			github
+		</a>
+		
+		</div>
+</nav>
+
+
+    
+    <div class='entry'>
+<h2>mosh - for laggy ssh connections</h2>
+
+
+
+<p>I have bad internet connection at home and I need to frequently connect to a VPS via ssh. When the connection is slow, there is a big lag in between my typing and the keystrokes appearing at the server terminal. This is especially worse when I need to edit files in <code class="language-plaintext highlighter-rouge">vim</code>. At one point I used WinSCP to edit the files in a GUI where it loads a local copy for editing and then copies the local edits to the server when I save it but I wanted a better solution for this, one where I don’t need to leave the CLI. So, <a href="https://www.mosh.org" target="_blank">mosh</a> came to the rescue.</p>
+
+<p>Mosh defines itself as “a replacement for interactive SSH terminals. It’s more robust and responsive, especially over Wi-Fi, cellular, and long-distance links.”, it has made my life much easier and it is easy to catch on too. Another feature that I like is that in case when the internet connection is lost for longer periods, it doesn’t disconnect automatically and resumes when the connection is restored.</p>
+
+<p><strong>Common usage examples:</strong></p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c"># typical connect</span>
+<span class="nv">$ </span>mosh &amp;lt<span class="p">;</span><span class="nb">hostname</span>&amp;gt<span class="p">;</span>
+
+<span class="c"># connect through a specific port e.g. 8022</span>
+<span class="nv">$ </span>mosh <span class="nt">--ssh</span><span class="o">=</span><span class="s2">"ssh -p 8022"</span> &amp;lt<span class="p">;</span><span class="nb">hostname</span>&amp;gt<span class="p">;</span>
+
+<span class="c"># using private key</span>
+<span class="nv">$ </span>mosh <span class="nt">--ssh</span><span class="o">=</span><span class="s2">"ssh -i &amp;lt;privatekey-file&amp;gt;"</span> &amp;lt<span class="p">;</span><span class="nb">hostname</span>&amp;gt<span class="p">;</span>
+</code></pre></div></div>
+
+<p>Note: mosh must be installed on both server and client side. If using mosh on a VPS, remember to allow connections via any of UDP ports from 60000-61000.</p>
+
+
+
+<small><em> Wed, 15 Jul 2020 10:26:53 +0530 </em></small>
+</div>
+
+    
+    
+  </body>
+</html>

@@ -1,0 +1,163 @@
+@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+
+html {
+	max-width: 1050px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 30px;
+	color: #ececec;
+	background-color: #222831;
+	padding-bottom: 200px;
+	font-family: 'Roboto Mono';
+	 }
+
+a {color: #f2a365; }
+.link-inactive { color: #ececec; text-decoration: none; }
+.noline { text-decoration: none;}
+.line { text-decoration: underline; }
+
+.yellow {color: #f2a365; }
+
+a:hover {color: lightblue; }
+
+/* css for the header */
+h1{
+	margin-right: auto;
+	font-size: 1.8rem;
+}
+
+.header{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+}
+
+.header a {
+	align-self: center;
+	padding: 1rem;
+	margin-left: 2rem;
+}
+/* end of header css */
+
+.entry {
+	border-left: 10px solid #801336;
+	padding: 10px 10px 10px 10px;
+	border-radius: 0 20px 20px 0;
+	margin-bottom: 20px;
+	background-color: #393e46;
+	line-height: 1.3rem;
+	}
+
+
+small{
+	font-size: .7rem !important;
+}
+
+/* para outside entry posts */
+p{
+	font-size: .9rem;
+}
+
+/* para inside entries */
+.entry p{
+	font-size: 0.9rem;
+}
+
+.entry h2 { font-size: 1.2rem;margin: 2px auto 10px auto; }
+
+
+.entry code{
+	font-size: 16px;
+}
+
+li{
+	padding-bottom: 4px;
+}
+
+ul{
+	font-size: .9rem;
+	padding-bottom: 4px;
+}
+
+.bimg{
+	margin: auto;
+	padding: 1rem;
+	padding-bottom: .2rem;
+}
+
+.right{
+	text-align: center;
+}
+
+.credit{
+	margin-left:auto;
+	margin-right:auto;
+	font: .9rem;
+	text-align: center;
+	font-style: italic;
+}
+
+.flex-container{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+}
+
+/* for small screens*/
+@media only screen and (max-width: 700px) {
+
+	html{
+		margin-top: 1rem;
+	}
+
+	/* header css */
+	.header{
+		flex-direction: column;
+		justify-content: flex-start;
+	}
+
+	.header a{
+		align-self: flex-start;
+		margin: 0;
+		padding: 0;
+		padding-left: .5rem;
+		padding-bottom: .5rem;
+	}
+
+	h1{
+		font-size: 1.5rem;
+	}
+
+	.entry{
+
+		border-left: 5px solid #696769;
+		margin-bottom: 15px;
+		border-radius: 0 8px 8px 0;
+		padding: 12px;
+	}
+
+	small{
+		font-size: .8rem !important;
+	}
+
+	/* para outside entry posts */
+	p{
+		font-size: 0.9rem;
+		padding-left: .3rem;
+	}
+
+	/* para inside entries */
+	.entry p{
+		font-size: 0.9rem;
+	}
+
+	.entry h2 { font-size: 1.1rem; }
+
+	.flex-container{
+		display: flex;
+		flex-direction: column !important; 
+		justify-content: center;
+	}
+}
