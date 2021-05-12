@@ -1,7 +1,9 @@
 - name: home
   link: /
 - name: blog
-  link: /blog.html
+  link: /blog
+- name: contact
+  link: /contact
 - name: twitter
   link: https://twitter.com/rustyelectron
   ext: true

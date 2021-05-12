@@ -50,9 +50,8 @@ h1{
 	line-height: 1.3rem;
 	}
 
-
-small{
-	font-size: .7rem !important;
+.small{
+	font-size: 0.5rem !important;
 }
 
 /* para outside entry posts */
@@ -134,11 +133,12 @@ ul{
 
 		border-left: 5px solid #696769;
 		margin-bottom: 15px;
+		margin-top: 15px;
 		border-radius: 0 8px 8px 0;
 		padding: 12px;
 	}
 
-	small{
+	.small{
 		font-size: .8rem !important;
 	}
 
@@ -157,7 +157,22 @@ ul{
 
 	.flex-container{
 		display: flex;
-		flex-direction: column-reverse; 
+		flex-direction: column; 
 		justify-content: center;
 	}
+}
+
+/* only for about page */
+
+#trigger{
+	display: none;
+}
+
+#trigger:checked + span:after {
+	display: inline;
+	content:'pritom.gogoi101@gmail.com';
+}
+
+#trigger:checked ~ label {
+	display: none;
 }
