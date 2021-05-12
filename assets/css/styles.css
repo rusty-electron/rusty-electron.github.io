@@ -119,6 +119,19 @@ ul{
 	justify-content: space-evenly;
 }
 
+.book-container{
+	display: grid;
+	grid-template-columns: auto auto;
+	justify-content: center;
+	grid-gap: 20px 50px;
+}
+
+.book-item{
+	display: grid;
+	grid-template-rows: 320px auto;
+	align-items: center;
+}
+
 /* for small screens*/
 @media screen and (max-width: 600px) {
 	
@@ -183,6 +196,14 @@ ul{
 	ul.narrow{
 		padding-right: 10px;
 		padding-left: 20px;
+	}
+
+	.book-container{
+		display: block;
+	}
+
+	.book-item{
+		justify-content: center;
 	}
 }
 

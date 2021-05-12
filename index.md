@@ -11,7 +11,8 @@ I like to create stuff using programming and electronics.
 * embedded systems
 * control systems
 
-while you are here you can checkout my useful programs list [WIP]
+while you are here you can checkout my useful programs list [WIP]\\
+ or [my reading list][1]{: class="noline"}
 
 ## recent posts:
 
@@ -21,3 +22,5 @@ while you are here you can checkout my useful programs list [WIP]
 {% endfor %}
 <a class="noline" href="/blog">see more..</a>
 </ul>
+
+[1]: /books
