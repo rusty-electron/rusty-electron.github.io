@@ -1,0 +1,12 @@
+<nav>
+	<div class="header">
+		<h1>rustyelectron.live</h1>
+		{% for item in site.data.navigation %}
+		<a href="{{ item.link }}"
+			{% if item.ext %} target=_blank {% endif %}
+			{% if page.url == item.link %} class="link-inactive" {% endif %}>
+			{{ item.name }}
+		</a>
+		{% endfor %}
+		</div>
+</nav>

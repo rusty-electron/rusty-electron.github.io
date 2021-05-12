@@ -1,0 +1,10 @@
+- name: home
+  link: /
+- name: blog
+  link: /blog.html
+- name: twitter
+  link: https://twitter.com/rustyelectron
+  ext: true
+- name: github
+  link: https://github.com/rusty-electron
+  ext: true

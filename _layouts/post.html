@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<div class='entry'>
+<h2>{{ page.title | downcase }}</h2>
+
+{% if page.categories.size > 1 %}
+<small>tags:
+    {% for cat in page.categories %}[<span class="yellow">{{ cat }}</span>]{% endfor %}
+</small>
+{% endif %}
+
+{{ content }}
+
+<small><em> {{ page.date | date_to_rfc822 }} </em></small>
+</div>

@@ -1,108 +1,14 @@
-<!doctype html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>blog</title>
-    <link rel="stylesheet" href="/assets/css/styles.css">
-  </head>
-  <body>
-    <div>
-    <nav>
-	<div class="header">
-		<h1>rustyelectron.live</h1>
-		
-		<a href="/"
-			
-			>
-			home
-		</a>
-		
-		<a href="/blog.html"
-			
-			 class="link-inactive" >
-			blog
-		</a>
-		
-		<a href="https://twitter.com/rustyelectron"
-			 target=_blank 
-			>
-			twitter
-		</a>
-		
-		<a href="https://github.com/rusty-electron"
-			 target=_blank 
-			>
-			github
-		</a>
-		
-		</div>
-</nav>
-
-
-    
-    <h2>blog posts:</h2>
+---
+layout: default
+title: blog
+---
+<h2>blog posts:</h2>
 
 <ul>
-  
+  {% for post in site.posts %}
     <li>
-      <h2><a class="noline" href="/linux/cups/printer/2020/12/08/commandline-printing-using-cups.html">commandline printing using cups</a></h2>
-      <p>I wanted to set up printing with my HP Laserjet printer on my thinkpad, I have previously setup printing with this device on ElementaryOS so I know it works seamlessly with HPLIP. Now I wanted to replicate the same on my new machine. I looked up articles on printing on the archwiki and found something about CUPS. I started reading but due to my social media induced short attention-span, couldn’t read more than five lines, promised to read later and proceeded to install the package using <code class="language-plaintext highlighter-rouge">pacman</code>.</p>
-
+      <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
+      {{ post.excerpt }}
     </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/09/14/syncing-remote-folders-using-rsync.html">syncing remote folders using rsync</a></h2>
-      <p>I used to manage this blog by logging in to the VPS and then running the <code class="language-plaintext highlighter-rouge">lb</code> script to make new posts and edit or delete old ones. It kind of got tedious and I was always thinking of switching to using rsync to synchronize remote folders like this blog folder. I finally got around, installed rsync and looked up the man page. I needed a way to use the private key for the remote login so I found this useful command that downloads the remote folder to my local machine:</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/linux/thinkpad/2020/08/10/joining-thinkpad-gang.html">joining thinkpad gang</a></h2>
-      <p>Yes, I have fallen for the infamous thinkpad meme and bought one.</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/19/syncthing-syncing-over-local-wifi.html">syncthing - syncing over local wifi</a></h2>
-      <p>Sometime this year, I realized that manually managing a cloud folder in google drive/one drive is a time consuming process. One needs to open the drive website and then manually upload the files to be updates/copied. These websites are large and take quite a lot of time to load and I find it specially frustating when I am in hurry and the uploading process doesn’t even start.</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/16/unattended-upgrades-on-gnu-linux.html">unattended upgrades on gnu/linux</a></h2>
-      <p>I run this site on a VPS and as for vpn I use OpenVPN that passes my traffic through a VPS. I am too lazy to periodically access one of these servers and manually run <code class="language-plaintext highlighter-rouge">sudo apt update &amp;&amp; sudo apt upgrade</code>. I found these commands and config files that will periodically update the system and also reboot at a specific time if required for important kernel updates.</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/15/mosh-for-laggy-ssh-connections.html">mosh - for laggy ssh connections</a></h2>
-      <p>I have bad internet connection at home and I need to frequently connect to a VPS via ssh. When the connection is slow, there is a big lag in between my typing and the keystrokes appearing at the server terminal. This is especially worse when I need to edit files in <code class="language-plaintext highlighter-rouge">vim</code>. At one point I used WinSCP to edit the files in a GUI where it loads a local copy for editing and then copies the local edits to the server when I save it but I wanted a better solution for this, one where I don’t need to leave the CLI. So, <a href="https://www.mosh.org" target="_blank">mosh</a> came to the rescue.</p>
-
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/15/mutual-funds-introductory-notes.html">mutual funds introductory notes</a></h2>
-      <p>I have been studying a little about share markets and mutual funds investment and in near future I plan to invest some extra cash so just for records I wanted to make some notes about the topic.</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/10/web-scraping-form-field-labels.html">web-scraping form field labels</a></h2>
-      <p>My cousin asked me to help with the documents required for a college form website so I checked the site but was too lazy to write it all down. I quickly wrote the following python script, grabbed the form labels and sent him the list. I think this could serve as a good boilerplate code.</p>
-
-    </li>
-  
-    <li>
-      <h2><a class="noline" href="/2020/07/09/keep-ssh-connection-alive.html">keep ssh connection alive</a></h2>
-      <p>It is very annoying when I look up something in a different window and then switch back to the ssh terminal only to find out that the connection has timed out and I need to log in again.
-One way to solve this is to send null packets at regular intervals from the client side. Open the <code class="language-plaintext highlighter-rouge">~/.ssh/config</code> file and add the following lines:</p>
-
-    </li>
-  
+  {% endfor %}
 </ul>
-
-    
-    
-  </body>
-</html>
