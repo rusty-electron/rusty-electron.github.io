@@ -106,7 +106,7 @@ ul{
 }
 
 /* for small screens*/
-@media only screen and (max-width: 700px) {
+@media only screen and (min-width: 700px) {
 
 	html{
 		margin-top: 1rem;
@@ -157,7 +157,7 @@ ul{
 
 	.flex-container{
 		display: flex;
-		flex-direction: column !important; 
+		flex-direction: column-reverse; 
 		justify-content: center;
 	}
 }
