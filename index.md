@@ -9,7 +9,6 @@ I like to create stuff using programming and electronics.
 ### interests:
 * deep learning
 * embedded systems
-* computer architecture
 * control systems
 
 while you are here you can checkout my useful programs list [WIP]
@@ -22,3 +21,5 @@ while you are here you can checkout my useful programs list [WIP]
 {% endfor %}
 <a class="noline" href="/blog">see more..</a>
 </ul>
+
+<h6>rss: <span class="yellow">rustyelectron.live/feed.xml</span></h6>
