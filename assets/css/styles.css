@@ -180,7 +180,7 @@ ul{
 		font-size: 0.9rem;
 	}
 
-	ul{
+	ul.narrow{
 		padding-right: 10px;
 		padding-left: 20px;
 	}
