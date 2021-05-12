@@ -106,7 +106,7 @@ ul{
 }
 
 /* for small screens*/
-@media only screen and (min-width: 700px) {
+@media screen and (max-width: 600px) {
 
 	html{
 		margin-top: 1rem;
