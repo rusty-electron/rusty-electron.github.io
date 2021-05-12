@@ -175,6 +175,15 @@ ul{
 		flex-direction: column; 
 		justify-content: center;
 	}
+
+	pre.highlight{
+		font-size: 0.9rem;
+	}
+
+	ul{
+		padding-right: 10px;
+		padding-left: 20px;
+	}
 }
 
 /* only for about page */

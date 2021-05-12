@@ -5,11 +5,11 @@ title: about
 
 ## contact me
 
-<div> 
+<p> 
 
 mail: <input id="trigger" type="checkbox"> <span class="yellow"></span> <label class="cursor yellow" for="trigger">[show]</label>
 
-</div>
+</p>
 
 I am also active on [twitter][1]{:target="_blank"}.
 
