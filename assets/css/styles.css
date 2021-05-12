@@ -176,3 +176,7 @@ ul{
 #trigger:checked ~ label {
 	display: none;
 }
+
+.cursor{
+	cursor: pointer;
+}

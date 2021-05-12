@@ -7,7 +7,7 @@ title: about
 
 <div> 
 
-mail: <input id="trigger" type="checkbox"> <span class="mail yellow"></span> <label class="hide yellow" for="trigger">[show]</label>
+mail: <input id="trigger" type="checkbox"> <span class="yellow"></span> <label class="cursor yellow" for="trigger">[show]</label>
 
 </div>
 
