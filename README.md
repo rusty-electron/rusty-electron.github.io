@@ -8,9 +8,11 @@ this repo contains the code for my [blog][1], it uses jekyll for generating stat
 > note to arch users, i had issues with PATH when I followed the official docs -- the instructions at [archwiki][3] worked (as always).
 
 * install the rubygems, `jekyll` and `bundler`
+
 `gem install jekyll bundler`
 
 * clone this repo and `cd` inside
+
 `git clone https://github.com/rusty-electron/blog.git`
 
 * use bundler to install other requirements listed in `./Gemfile`
