@@ -3,8 +3,8 @@ layout: default
 title: rustyelectron's blog
 ---
 
-## Hi, I am Pritom.
-I like to create stuff using programming and electronics.
+## hi, i am pritom.
+I  create stuff using programming and electronics.
 
 ### interests:
 * deep learning
