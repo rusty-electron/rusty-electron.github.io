@@ -17,3 +17,6 @@ title: books
 ### books read
 
 \* will add later *
+
+<div class="right">
+    <a class="noline" href="https://github.com/rusty-electron/get-book-cover" target="_blank">script to download book covers</a></div>
