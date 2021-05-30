@@ -62,7 +62,7 @@ code{
 	border-radius: 0 20px 20px 0;
 	margin-bottom: 20px;
 	background-color: #393e46;
-	line-height: 1.3rem;
+	line-height: 1.4rem;
 	}
 
 .small{
@@ -90,7 +90,7 @@ li{
 	padding-bottom: 4px;
 }
 
-ul{
+ul, ol{
 	font-size: .9rem;
 	padding-bottom: 4px;
 }
