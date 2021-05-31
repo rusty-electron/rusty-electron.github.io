@@ -18,7 +18,7 @@ while you are here you can checkout my useful programs list [WIP]\\
 
 <ul>
 {% for post in site.posts limit:5 %}
-	<li><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></li>
+	<li><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a> - [ {{ post.date | timeago }} ]</li>
 {% endfor %}
 <a class="noline" href="/blog">see more..</a>
 </ul>
