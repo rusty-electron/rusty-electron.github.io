@@ -11,6 +11,8 @@ I  create stuff using programming and electronics.
 * embedded systems
 * control systems
 
+view [[ online resume ]][2]
+
 while you are here you can checkout my useful programs list [WIP]\\
  or [my reading list][1]{: class="noline"}
 
@@ -24,3 +26,4 @@ while you are here you can checkout my useful programs list [WIP]\\
 </ul>
 
 [1]: /books
+[2]: /resume/index.html

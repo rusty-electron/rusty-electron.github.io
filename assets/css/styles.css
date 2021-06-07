@@ -65,25 +65,26 @@ code{
 	line-height: 1.4rem;
 	}
 
+
 .small{
 	font-size: 0.5rem !important;
 }
 
 /* para outside entry posts */
 p{
-	font-size: .9rem;
+	font-size: 16px;
 }
 
 /* para inside entries */
 .entry p{
-	font-size: 0.9rem;
+	font-size: 1rem;
 }
 
 .entry h2 { font-size: 1.2rem;margin: 2px auto 10px auto; }
 
 
 .entry code{
-	font-size: 16px !important;
+	font-size: 16px;
 }
 
 li{
@@ -91,7 +92,7 @@ li{
 }
 
 ul, ol{
-	font-size: .9rem;
+	font-size: 16px;
 	padding-bottom: 4px;
 }
 
@@ -178,7 +179,7 @@ ul, ol{
 	}
 
 	.entry code{
-		font-size: 0.9rem !important; 
+		font-size: 1rem !important; 
 	}
 
 	/* para inside entries */
