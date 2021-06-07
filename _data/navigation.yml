@@ -2,11 +2,13 @@
   link: /
 - name: blog
   link: /blog
+- name: random
+  link: /random
 - name: contact
   link: /contact
-- name: twitter
+- name: /t
   link: https://twitter.com/rustyelectron
   ext: true
-- name: github
+- name: /g
   link: https://github.com/rusty-electron
   ext: true

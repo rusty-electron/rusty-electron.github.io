@@ -134,7 +134,9 @@ ul, ol{
 
 /* for small screens*/
 @media screen and (max-width: 600px) {
-	
+	.time-ago{
+		display: none;
+	}
 	html{
 		margin-top: 0rem;
 	}
