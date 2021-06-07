@@ -1,0 +1,64 @@
+# jemdoc: menu{MENU}{index.html}
+= Pritom Gogoi -- resume page
+
+== Bio:
+I am an Instrumentation Engg. Graduate from Assam Engineering College, Guwahati. As of now, I am working on developing my skills in deep learning research and embedded development.
+
+Mail - [pritom.gogoi101@gmail.com] |  [pritom16-392@aec.ac.in]
+
+\[ [./resume.pdf download resume.pdf] \]
+=== Social links:
+- Github: [https://github.com/rusty-electron rusty-electron]
+- Linkedin: [https://www.linkedin.com/in/pritom-gogoi/ profile]
+- Medium: [https://medium.com/@rustyelectron @rustyelectron]
+- Twitter: [https://twitter.com/rustyelectron profile]
+
+== Internships and Training:
+=== IIT, Guwahati | /Research Intern/
+Oct 2020 - Current | Guwahati, AS\n
+I am currently working under Dr. Manas Kamal Bhuyan and Mr. H. Pallab Jyoti Dutta
+for developing an algorithm for hand keypoints localization based on Convolutional
+Pose Machines and Attention Augmented Convolutional blocks.
+
+=== University of Warwick, UK | /Visiting student/
+Feb 2020 – Mar 2020 | Coventry, Warwickshire\n
+I received a scholarship under the Winter Overseas Fellowship program and was able
+to work under Dr. Layi Alatise and Dr. Jose Ortiz Gonzalez for developing a LabVIEW
+test setup for evaluation of the reliability of SiC Power MOSFETs.
+
+=== IIIT, Guwahati | /Summer Intern/
+Jul 2018 – Sept 2018 | Mirza, AS\n
+Worked under the guidance of Dr. Rakesh Matam to develop an Intelligent Parking
+System that detects the presence of a vehicle using an array of sensors and a novel
+heuristic algorithm.
+
+== Publications
+=== An UAV Assisted Multi-sensor based Smart Parking system
+IEEE International Conference on Computer Communications\n
+/6-9 July 2020 | Ottawa, Canada/
+
+=== Object Detection and Tracking turret based on Cascade Classifiers and Single Shot Detectors
+2020 International Conference on Computational Performance Evaluation\n
+/NEHU, Shillong, India/
+
+== Projects
+Image Processing Based Object Tracking Turret
+- The proposed device was to be able to detect and track COCO objects
+using a CNN model. The motion of the tracking turret was controlled by
+PID controller.
+
+Timer-Controlled Automatic Charger
+- designed a automatic charger using the ESP8266 microcontroller which
+was capable of controlling phone charger or any AC appliance via WiFi
+webserver or manual device controls.
+
+Bitoverflow - Open Source Contribution Event
+- organized this event which is similar to Kharagpur Winter of Code or
+GirlScript Summer of Code where participants work on the project of
+their choice and make valuable contributions to open source projects.
+
+== MOOCS and Certifications
+- Fundamentals Of Digital Image And Video Processing | Coursera
+- Microprocessors And Microcontrollers | NPTEL
+- Digital Circuits | NPTEL
+- Introduction to Biostatistics | NPTEL
