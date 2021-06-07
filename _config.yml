@@ -1,3 +1,15 @@
 timezone: Asia/Calcutta
 jekyll_timeago:
   depth: 1
+
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+      type: "posts" # previously `post` in Jekyll 2.2.
+    values:
+      category: "blog" # TODO: not working !
+
+permalink: /blog/:title:output_ext
+
+

@@ -83,7 +83,7 @@ p{
 
 
 .entry code{
-	font-size: 16px;
+	font-size: 16px !important;
 }
 
 li{
@@ -160,7 +160,6 @@ ul, ol{
 	}
 
 	.entry{
-
 		border-left: 5px solid #696769;
 		margin-bottom: 15px;
 		margin-top: 15px;
@@ -176,6 +175,10 @@ ul, ol{
 	p{
 		font-size: 0.9rem;
 		padding-left: .3rem;
+	}
+
+	.entry code{
+		font-size: 0.9rem !important; 
 	}
 
 	/* para inside entries */
