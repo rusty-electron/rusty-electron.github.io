@@ -164,6 +164,10 @@ ul, ol{
 		font-size: 1.2rem;
 	}
 
+	ul, ol{
+		font-size: 0.9rem;
+	}
+
 	.entry{
 		border-left: 5px solid #696769;
 		margin-bottom: 15px;
