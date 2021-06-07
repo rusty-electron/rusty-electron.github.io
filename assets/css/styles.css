@@ -77,14 +77,14 @@ p{
 
 /* para inside entries */
 .entry p{
-	font-size: 1rem;
+	font-size: 16px;
 }
 
 .entry h2 { font-size: 1.2rem;margin: 2px auto 10px auto; }
 
 
 .entry code{
-	font-size: 16px;
+	font-size: 17px;
 }
 
 li{
@@ -158,6 +158,10 @@ ul, ol{
 
 	h1{
 		font-size: 1.5rem;
+	}
+
+	h2{
+		font-size: 1.2rem;
 	}
 
 	.entry{
