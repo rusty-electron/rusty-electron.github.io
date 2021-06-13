@@ -11,7 +11,7 @@ I  create stuff using programming and electronics.
 * embedded systems
 * control systems
 
-view [[ online resume ]][2]
+view [[online resume]][2]{: class="noline"}
 
 while you are here you can checkout my useful programs list [WIP]\\
  or [my reading list][1]{: class="noline"}
@@ -20,7 +20,12 @@ while you are here you can checkout my useful programs list [WIP]\\
 
 <ul>
 {% for post in site.posts limit:5 %}
-	<li><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a><span class="time-ago"> - [ {{ post.date | timeago }} ]</span></li>
+	{% if post.category == 'random' %}
+		<li><a class="noline" href="{{ post.url }}">[r] {{ post.title | downcase }}</a></li>
+	{% else %}
+		<li><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></li>
+	{% endif %}
+	
 {% endfor %}
 <a class="noline" href="/blog">see more..</a>
 </ul>

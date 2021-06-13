@@ -1,0 +1,9 @@
+<div>
+    <div style="text-align: center;margin: 0;">
+        <img src="{{ page.imageurl }}" alt="{{ page.imagealt}}"/>
+    </div>
+    <div class="credit">
+        {% assign photostr = page.imageurl | split: '/' %}
+        {{ page.imagecaption }} - <a href="https://unsplash.com/photos/{{ photostr[-2] }}" target="_blank">unsplash</a>
+    </div>
+</div>

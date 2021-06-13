@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Mono&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap'); */
+/* @import url('https://fonts.googleapis.com/css2?family=Apercu+Mono&display=swap'); */
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
-
+/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
 html {
 	max-width: 1050px;
 	margin-left: auto;
@@ -102,6 +102,10 @@ ul, ol{
 	padding-bottom: .2rem;
 }
 
+img{
+	padding-top: 0.2rem;
+}
+
 .right{
 	text-align: center;
 }
@@ -109,7 +113,7 @@ ul, ol{
 .credit{
 	margin-left:auto;
 	margin-right:auto;
-	font: .9rem;
+	font-size: .9rem;
 	text-align: center;
 	font-style: italic;
 }
