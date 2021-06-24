@@ -27,6 +27,11 @@ Pose Machines and Attention Augmented Convolutional blocks.
 </div>
 ~~~
 
+~~~
+{update:}
+github repo will be added soon
+~~~
+
 === University of Warwick, UK | /Visiting student/
 Feb 2020 – Mar 2020 | Coventry, Warwickshire\n
 I received a scholarship under the Winter Overseas Fellowship program and was able
@@ -42,11 +47,11 @@ heuristic algorithm.
 == Publications
 === An UAV Assisted Multi-sensor based Smart Parking system
 IEEE International Conference on Computer Communications\n
-/6-9 July 2020 | Ottawa, Canada/
+/6-9 July 2020 | Ottawa, Canada/ - [https://ieeexplore.ieee.org/abstract/document/9163040/ \[view paper\]]
 
 === Object Detection and Tracking turret based on Cascade Classifiers and Single Shot Detectors
 2020 International Conference on Computational Performance Evaluation\n
-/NEHU, Shillong, India/
+/NEHU, Shillong, India/ - [https://ieeexplore.ieee.org/abstract/document/9200139/ \[view paper\]]
 
 == Competitions
 === Plant Pathology 2021 - FGVC8 | Kaggle
@@ -58,6 +63,7 @@ Image Processing Based Object Tracking Turret
 - The proposed device was to be able to detect and track COCO objects
 using a CNN model. The motion of the tracking turret was controlled by
 PID controller.
+- view demo on [https://www.youtube.com/watch?v=Z2COTNBM-Gc youtube]
 
 Timer-Controlled Automatic Charger
 - designed a automatic charger using the ESP8266 microcontroller which
@@ -70,6 +76,7 @@ GirlScript Summer of Code where participants work on the project of
 their choice and make valuable contributions to open source projects.
 
 == MOOCS and Certifications
+- Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
 - Neural Networks and Deep Learning | Coursera
 - Fundamentals Of Digital Image And Video Processing | Coursera
 - Microprocessors And Microcontrollers | NPTEL
