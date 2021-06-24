@@ -59,6 +59,10 @@ IEEE International Conference on Computer Communications\n
 - completed at 62nd position (Top 10%) among 626 participating teams
 
 == Projects
+Semantic segmentation of leaves using UNet based model
+- pytorch implementation of unet model for segmentation
+- view on [https://github.com/gvil-research/leaf-segmentation-unet github]
+
 Image Processing Based Object Tracking Turret
 - The proposed device was to be able to detect and track COCO objects
 using a CNN model. The motion of the tracking turret was controlled by
