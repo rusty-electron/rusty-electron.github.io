@@ -63,6 +63,10 @@ Semantic segmentation of leaves using UNet based model
 - pytorch implementation of unet model for segmentation
 - view on [https://github.com/gvil-research/leaf-segmentation-unet github]
 
+Implementation of Neural Style Transfer
+- pytorch implementation of the paper /A Neural Algorithm of Artistic Style/
+- view on [https://github.com/rusty-electron/neural-style-transfer-pytorch github]
+
 Image Processing Based Object Tracking Turret
 - The proposed device was to be able to detect and track COCO objects
 using a CNN model. The motion of the tracking turret was controlled by
