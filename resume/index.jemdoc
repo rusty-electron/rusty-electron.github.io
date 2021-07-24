@@ -59,6 +59,11 @@ IEEE International Conference on Computer Communications\n
 - completed at 62nd position (Top 10%) among 626 participating teams
 
 == Projects
+Analog Circuit-Block for designing an Artificial Neural Networks
+- designed a Gilbert's Multiplier circuit for multiplying +weights and neuron inputs+
+- based on the multiplier circuit designed by Barrie Gilbert, see [https://ieeexplore.ieee.org/document/6499939/ paper]
+- view project page on [https://github.com/rusty-electron/fossee-esim-hackathon github]
+
 Semantic segmentation of leaves using UNet based model
 - pytorch implementation of unet model for segmentation
 - view on [https://github.com/gvil-research/leaf-segmentation-unet github]
@@ -85,9 +90,9 @@ their choice and make valuable contributions to open source projects.
 
 == MOOCS and Certifications
 - Deep Learning Specialization
-    - Convolutional Neural Networks
-    - Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
-    - Neural Networks and Deep Learning | Coursera
+    -- Convolutional Neural Networks
+    -- Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization
+    -- Neural Networks and Deep Learning | Coursera
 - Fundamentals Of Digital Image And Video Processing | Coursera
 - Microprocessors And Microcontrollers | NPTEL
 - Digital Circuits | NPTEL
