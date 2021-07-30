@@ -4,6 +4,7 @@ layout: default
 
 <div class='entry'>
 <h2>{{ page.title | downcase }}</h2>
+<small><em> > {{ page.date | date_to_rfc822 }} </em></small>
 
 {% if page.categories.size > 1 %}
 <small>tags:
@@ -13,5 +14,4 @@ layout: default
 
 {{ content }}
 
-<small><em> {{ page.date | date_to_rfc822 }} </em></small>
 </div>
