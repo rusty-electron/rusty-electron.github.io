@@ -1,4 +1,5 @@
 /* Default css file for jemdoc. */
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
 
 table#tlayout {
     border: none;
@@ -8,7 +9,7 @@ table#tlayout {
 
 body {
 	background: white;
-	font-family: Georgia, serif;
+	font-family: Ubuntu, serif;
 	padding-bottom: 8px;
 	margin: 0 auto;
     width: 1250px;
