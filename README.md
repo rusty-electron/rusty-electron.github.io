@@ -24,7 +24,7 @@ this repo contains the code for my [blog][1], it uses jekyll for generating stat
 
 You can easily deploy a jekyll site such as this one at github pages by following [these instructions][4]. Another way is to push this folder to a github repo and then use services such as [netlify](https://netlify.com) that allows concurrent building i.e., everytime you push changes to the github repo, netlify rebuilds your site by following your build instructions and then hosts your subsequently generated static pages.
 
-## `jemdoc` resume
+## Optional: `jemdoc` resume
 
 I also host a jemdoc resume page at [`rustyelectron.live/resume`](https://rustyelectron.live/resume/). See [jemdoc][5]'s page for instructions to learn to prepare a jemdoc site.
 
