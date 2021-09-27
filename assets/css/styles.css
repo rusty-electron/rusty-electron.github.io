@@ -1,6 +1,7 @@
 /* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap'); */
 /* @import url('https://fonts.googleapis.com/css2?family=Apercu+Mono&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@310&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
 /* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
 html {
 	max-width: 1050px;
@@ -10,7 +11,7 @@ html {
 	color: #ececec;
 	background-color: #222831;
 	padding-bottom: 200px;
-	font-family: 'Roboto Mono';
+	font-family: 'Roboto Mono', monospace;
 	 }
 
 a {color: #f2a365; }
@@ -32,16 +33,16 @@ pre.highlight{
 	background-color: #222831;
 	display: block;
 	padding: 8px;
-	color: #c2c2c2;
+	/* color: #c2c2c2; */
 	border-radius: 5px;
 	/* border: .5px #c2c2c2 solid; */
 	/* font-size: 16px; */
 	overflow-x: auto;
 }
-
+/* 
 code{
 	color: #f2a365;
-}
+} */
 
 .header{
 	display: flex;
@@ -80,7 +81,7 @@ p{
 	font-size: 16px;
 }
 
-.entry h2 { font-size: 1.2rem;margin: 2px auto 10px auto; }
+.entry h2 { font-size: 1.4rem;margin: 2px auto 10px auto; }
 
 
 .entry code{
@@ -165,7 +166,7 @@ img{
 	}
 
 	h2{
-		font-size: 1.2rem;
+		font-size: 1.3rem;
 	}
 
 	ul, ol{
@@ -199,7 +200,7 @@ img{
 		font-size: 0.9rem;
 	}
 
-	.entry h2 { font-size: 1.1rem; }
+	.entry h2 { font-size: 1.36rem; }
 
 	.flex-container{
 		display: flex;
