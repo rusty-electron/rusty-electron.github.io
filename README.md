@@ -30,17 +30,17 @@ I also host a jemdoc resume page at [`rustyelectron.live/resume`](https://rustye
 
 ### steps to host
 
-Follow these instructions to host your jemdoc page at `yourblog.com/<path>`. 
+Follow these instructions to host your jemdoc page at `yourblog.com/<path>`.
 1. create `<path>` directory in your jekyll site folder
 2. generate html files using `jemdoc` or use my `makefile` (see below)
 3. place them in your `<path>` directory
 
 > Note that you must have an `index.html` file in your <path> directory
-  
+
 Jekyll will copy your `<path>` directory to the `_site` directory and your jekyll build will contain the jemdoc generated html files. If all goes well, your jemdoc pages will be hosted at `yourblog.com/<path>`.
-  
+
 #### makefile for jemdoc
-  
+
 ```makefile
 DOCS=index extra education # replace with the name(s) of jemdoc page(s) you created
 
@@ -65,6 +65,8 @@ clean :
 	-rm -f html/*.html
 
 ```
+
+> `jemdoc` is quite old and in modern web, it has its shortcomings. I have future plans to rewrite jemdoc in python 3 and update it to use html5.
 
 [1]: https://rustyelectron.live
 [2]: https://jekyllrb.com/docs/installation/#requirements
