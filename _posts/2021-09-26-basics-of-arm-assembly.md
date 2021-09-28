@@ -1,15 +1,15 @@
 ---
 layout: post
-title: arm-assembly basics
+title: basics of arm assembly
 date: 2021-09-26 02:35 +0530
 ---
-
 <!-- possible syntax forms -->
 
 Before working with ARM assembly, you need to have the arm compiler toolchain installed. If you are on debian-based distros, you can run `sudo apt install gcc-5-arm-linux-gnueabi`, arch users can install the package `arm-none-eabi-gcc` using `pacman`.
 
 Now open up your favourite text editor and type out the following boilerplate code:
-```
+
+```nasm
 .global _start
 .section .text
 
@@ -26,7 +26,7 @@ Some notes about the above given template:
 
 ### testing a simple instruction
 
-```
+```nasm
 .global _start
 .section .text
 
@@ -44,7 +44,7 @@ Let's save it as `001.asm`.
 
 We need to assemble this file so we use the `arm-none-eabi-as` tool in arch ( or `arm-linux-gnueabi-as` in debian) to turn this into an intermediate object that will be converted into executable elf binary by `gcc`.
 
-```
+```sh
 $ arm-none-eabi-as 001.asm -o 001.o
 $ file 001.o
 001.o: ELF 32-bit LSB relocatable, ARM, EABI5 version 1 (SYSV), not stripped
@@ -52,7 +52,7 @@ $ file 001.o
 
 Now we pass the object file through the linker.
 
-```
+```sh
 $ arm-none-eabi-gcc 001.o -o 001.elf -nostdlib
 $ file 001.elf
 001.elf: ELF 32-bit LSB executable, ARM, EABI5 version 1 (SYSV), statically linked, not stripped
@@ -64,7 +64,7 @@ Note that we passed the `-nostdlib` flag to the linker, this is because if we do
 
 Now you are probably not working on a machine with ARM architecture (as of 2021) so you need to install `qemu` which is "a free and open-source hypervisor". Arch users can `sudo pacman -S qemu-arch-extra`.
 
-```
+```sh
 $ qemu-arm ./001.elf
 Illegal instruction (core dumped)
 ```
@@ -102,7 +102,7 @@ As given in the table, we need to load the hex value of 0x1 into the register r7
 
 Let us now try executing this code.
 
-```shell
+```sh
 $ arm-none-eabi-as 001.asm -o 001.o
 $ arm-none-eabi-gcc 001.o -o 001.elf -nostdlib
 $ qemu-arm 001.elf
@@ -112,3 +112,49 @@ $ echo $?
 
 So no errors this time and the return value is what we specified in our assembly code.
 
+### writing to STDOUT
+
+I order to write data to the screen, once again we need to refer to the [syscall table](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/constants/syscalls.md#arm-32_bit_EABI) and this time the `write` syscall is of interest to us. In Linux, we have three types of file descriptors:
+
+1. STDIN - file descriptor 0
+1. STDOUT - file descriptor 1
+1. STDERR - file descriptor 2
+
+As we are going to print text on the screen, the file descriptor 1 - `STDOUT` is where we should write our data.
+
+```nasm
+.global _start
+.section .text
+
+_start:
+    mov r7, #0x4
+    mov r0, #1
+    ldr r1, =message
+    mov r2, #13
+
+    swi 0
+
+    mov r7, #0x01
+    mov r0, #42
+
+    swi 0
+
+.section .data
+    message:
+    .ascii "Hello, World\n"
+```
+
+According to the table, we move the value 0x4 into the r7 register as we are going to use the system call 4, next we load 1 into r0 register as we are going to write to the file descriptor 1. We then move to the data section and define the `message` symbol that is of type *ascii* and the message is `Hello, World\n`. The `ldr` instruction can be used to load a memory address to a register so we use this instruction to load the address of `message` to the r1 register. The last data that the `write` system call needs is the length of the message string which is 13 so we load it into the register r2.
+
+We also add the instructions for an `exit` syscall at the end as without it the program will crash after printing our message. 
+
+We can now try to assemble, compile and run our program to see that it prints the message and exits successfully.
+
+```sh
+$ arm-none-eabi-as 001.asm -o 001.o
+$ arm-none-eabi-gcc 001.o -o 001.elf -nostdlib
+$ qemu-arm 001.elf
+Hello, World
+```
+
+Neat!
