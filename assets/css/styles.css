@@ -1,7 +1,4 @@
-/* @import url('https://fonts.googleapis.com/css2?family=Anonymous+Pro&display=swap'); */
-/* @import url('https://fonts.googleapis.com/css2?family=Apercu+Mono&display=swap'); */
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@310&display=swap');
-/* @import url('https://fonts.googleapis.com/css2?family=Inconsolata&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap');
 
 html {
 	max-width: 1050px;
@@ -11,6 +8,7 @@ html {
 	color: #ececec;
 	background-color: #222831;
 	padding-bottom: 200px;
+	font-size: 16px;
 	font-family: 'Roboto Mono', monospace;
 }
 
@@ -75,15 +73,6 @@ pre.highlight{
 	font-size: 0.5rem !important;
 }
 
-/* para outside entry posts */
-p{
-	font-size: 16px;
-}
-
-/* para inside entries */
-.entry p{
-	font-size: 16px;
-}
 
 .entry h2 { font-size: 1.4rem;margin: 2px auto 10px auto; }
 
@@ -97,7 +86,6 @@ li{
 }
 
 ul, ol{
-	font-size: 16px;
 	padding-bottom: 4px;
 }
 
@@ -142,6 +130,28 @@ img{
 	align-items: center;
 }
 
+.eop {
+	text-align: center;
+	font-size: .6rem;
+	color: #b8997d;
+}
+
+blockquote{
+	color: #2e2e2e;
+	background-color: #8d8d8d;
+	padding: 1rem;
+	border-radius: 0px 4px 4px 0px;
+	border-left: 10px solid #222831;
+}
+
+blockquote p{
+	margin: 0;
+	padding: 0;
+}
+
+blockquote a{
+	color: #b6325c;
+}
 /* for small screens*/
 @media screen and (max-width: 600px) {
 	.time-ago{

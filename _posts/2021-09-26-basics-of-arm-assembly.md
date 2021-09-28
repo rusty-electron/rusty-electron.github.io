@@ -42,7 +42,7 @@ Let's save it as `001.asm`.
 
 ### compiling and executing
 
-We need to assemble this file so we use the `arm-none-eabi-as` tool in arch ( or `arm-linux-gnueabi-as` in debian) to turn this into an intermediate object that will be converted into executable elf binary by `gcc`.
+We need to assemble this file so we use the `arm-none-eabi-as` tool in arch (or `arm-linux-gnueabi-as` in debian) to turn this into an intermediate object file that will be converted into executable ELF binary by arm `gcc`.
 
 ```sh
 $ arm-none-eabi-as 001.asm -o 001.o
@@ -62,26 +62,26 @@ Note that we passed the `-nostdlib` flag to the linker, this is because if we do
 
 ### running the executable
 
-Now you are probably not working on a machine with ARM architecture (as of 2021) so you need to install `qemu` which is "a free and open-source hypervisor". Arch users can `sudo pacman -S qemu-arch-extra`.
+Now you are probably not working on a machine with ARM architecture (as of 2021) so you need to install `qemu` which is "[*a free and open-source hypervisor*](https://www.qemu.org/)". Arch users can `sudo pacman -S qemu-arch-extra`.
 
 ```sh
 $ qemu-arm ./001.elf
 Illegal instruction (core dumped)
 ```
 
-So our program crashed when we tried executing it and didn't exit properly, instead it ran the `mov` instruction and continued to executed the code below it. We can use `xxd 001.elf` to see that there is a lot of content in the elf file.
+So our program crashed when we tried executing it and this is because it didn't exit properly, instead it ran the `mov` instruction and continued to executed the code below it. We can use `xxd 001.elf` to see that there is a lot of content in the .elf file after the `mov` instruction.
 
-In order to make sure that the program exits properly, we need to make use of *system calls*.
+In order to make sure that the program exits properly, we need to make use of [*system calls*](https://en.wikipedia.org/wiki/System_call).
 
-When we usualy write a program, it runs in the user-mode as opposed to kernel mode. A user-mode application process can't ends itself so it has to make of a software interrupt to ask to kernel to end the user-mode process.
+When we usualy write a program, it runs in the user-mode as opposed to kernel mode. A user-mode application process can't end itself so it has to make use of a software interrupt to ask to kernel to end the user-mode process.
 
-In arm assembly, we use the register r7 to specify what the kernel should do and the registers r0-r4 to specify the how it should be done.
+In arm assembly, we use the register r7 to specify what the kernel should do and the registers r0-r4 to specify the how it should be done (i.e. the configurations).
 
 #### syscall table
 
 Visit this [link](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/constants/syscalls.md#arm-32_bit_EABI) to view the syscall table for arm 32-bit.
 
-See the row where it reads `exit`. We should use the info given in this row to make our `exit` syscall.
+See the row where it reads `exit`. We will now use the info given in this row to make our `exit` syscall.
 
 ### exit
 
@@ -98,7 +98,7 @@ _start:
 .section .data
 ```
 
-As given in the table, we need to load the hex value of 0x1 into the register r7 and we may load the return value in r0.
+As given in the table, we need to load the hex value of `0x1` into the register r7 and we can load the return value (any arbitrary number) in r0.
 
 Let us now try executing this code.
 
@@ -116,9 +116,9 @@ So no errors this time and the return value is what we specified in our assembly
 
 I order to write data to the screen, once again we need to refer to the [syscall table](https://chromium.googlesource.com/chromiumos/docs/+/HEAD/constants/syscalls.md#arm-32_bit_EABI) and this time the `write` syscall is of interest to us. In Linux, we have three types of file descriptors:
 
-1. STDIN - file descriptor 0
-1. STDOUT - file descriptor 1
-1. STDERR - file descriptor 2
+* STDIN - file descriptor 0
+* STDOUT - file descriptor 1
+* STDERR - file descriptor 2
 
 As we are going to print text on the screen, the file descriptor 1 - `STDOUT` is where we should write our data.
 
@@ -144,9 +144,9 @@ _start:
     .ascii "Hello, World\n"
 ```
 
-According to the table, we move the value 0x4 into the r7 register as we are going to use the system call 4, next we load 1 into r0 register as we are going to write to the file descriptor 1. We then move to the data section and define the `message` symbol that is of type *ascii* and the message is `Hello, World\n`. The `ldr` instruction can be used to load a memory address to a register so we use this instruction to load the address of `message` to the r1 register. The last data that the `write` system call needs is the length of the message string which is 13 so we load it into the register r2.
+According to the table, we move the value `0x4` into the r7 register because we are going to use system call 4, next we load 1 into r0 register and we do this because we are going to write to the file descriptor 1. We then edit to the data section and define the `message` symbol that is of type *ascii* and the message is `Hello, World\n`. The `ldr` instruction can be used to load a memory address to a register so we use this instruction to load the address of `message` to the r1 register. The last data that the `write` system call needs is the length of the message string which is 13 in this case so we load it into the register r2.
 
-We also add the instructions for an `exit` syscall at the end as without it the program will crash after printing our message. 
+We also add the instructions for an `exit` syscall at the end as without it the program will crash (as seen previously) after printing our message. 
 
 We can now try to assemble, compile and run our program to see that it prints the message and exits successfully.
 
@@ -158,3 +158,5 @@ Hello, World
 ```
 
 Neat!
+
+> I prepared this article as a text version of a [video](https://www.youtube.com/watch?v=FV6P5eRmMh8) created by [@lowlevellearning](https://www.youtube.com/c/LowLevelLearning/) on youtube, therefore the credit for the content goes to him. Do check out his channel, he makes amazing content on embedded systems and I have learnt a lot from this videos and streams.
