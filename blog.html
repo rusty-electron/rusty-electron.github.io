@@ -4,10 +4,12 @@ title: blog
 ---
 <h2>blog posts:</h2>
 
+<a class="noline" href="{{ './topics.html' | relative_url }}">[ view by topic ]</a>
+
 <ul class="narrow">
   {% for post in site.posts %}
   <!-- default category -->
-  {% if post.category == nil or post.category == 'blog' %} 
+  {% if post.category != 'random' %} 
     <li>
       <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
       {{ post.excerpt }}

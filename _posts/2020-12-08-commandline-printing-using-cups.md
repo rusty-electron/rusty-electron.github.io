@@ -2,7 +2,7 @@
 layout: post
 title:  "commandline printing using cups"
 date: Tue, 08 Dec 2020 21:36:30 +0530
-categories: linux cups printer
+category: linux
 ---
 
 I wanted to set up printing with my HP Laserjet printer on my thinkpad, I have previously setup printing with this device on ElementaryOS so I know it works seamlessly with HPLIP. Now I wanted to replicate the same on my new machine. I looked up articles on printing on the archwiki and found something about CUPS. I started reading but due to my social media induced short attention-span, couldn't read more than five lines, promised to read later and proceeded to install the package using `pacman`.

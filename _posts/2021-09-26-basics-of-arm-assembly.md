@@ -2,8 +2,8 @@
 layout: post
 title: basics of arm assembly
 date: 2021-09-26 02:35 +0530
+category: embedded
 ---
-<!-- possible syntax forms -->
 
 Before working with ARM assembly, you need to have the arm compiler toolchain installed. If you are on debian-based distros, you can run `sudo apt install gcc-5-arm-linux-gnueabi`, arch users can install the package `arm-none-eabi-gcc` using `pacman`.
 
@@ -159,4 +159,4 @@ Hello, World
 
 Neat!
 
-> I prepared this article as a text version of a [video](https://www.youtube.com/watch?v=FV6P5eRmMh8) created by [@lowlevellearning](https://www.youtube.com/c/LowLevelLearning/) on youtube, therefore the credit for the content goes to him. Do check out his channel, he makes amazing content on embedded systems and I have learnt a lot from this videos and streams.
+> I prepared this article as a text version of a [video](https://www.youtube.com/watch?v=FV6P5eRmMh8) created by [@lowlevellearning](https://www.youtube.com/c/LowLevelLearning/) on youtube, therefore the credit for the content goes to him. Do check out his channel, he makes amazing content on embedded systems and I have learnt a lot from his videos and streams.

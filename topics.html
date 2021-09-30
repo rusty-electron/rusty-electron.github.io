@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<h2>blog posts: topic-wise </h2>
+
+<a class="noline" href="{{ './blog.html' | relative_url }}">[ view list ]</a>
+
+{% assign sorted_cats = site.categories | sort %}
+
+{% for category in sorted_cats %}
+    <h3>{{category|first}}</h3>
+    <ul>
+    {% for post in category.last %}
+      <li><a class="noline" href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+    </ul>
+{% endfor %}
+
+<div class="right"> this blog uses <a class="noline" target="_blank" href="https://jekyllrb.com/">jekyll</a></div>
