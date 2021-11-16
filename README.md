@@ -68,6 +68,9 @@ clean :
 
 > `jemdoc` is quite old and in modern web, it has its shortcomings. I have future plans to rewrite jemdoc in python 3 and update it to use html5.
 
+## Change log:
+* as of Nov 2021, the blog post page theme is based on [this blog](https://snarky.ca/).
+
 [1]: https://rustyelectron.live
 [2]: https://jekyllrb.com/docs/installation/#requirements
 [3]: https://wiki.archlinux.org/title/ruby#Setup
