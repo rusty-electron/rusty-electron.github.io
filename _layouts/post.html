@@ -3,8 +3,10 @@ layout: default
 ---
 
 <div class='entry'>
-<h2>{{ page.title | downcase }}</h2>
-<small><em> > {{ page.date | date_to_rfc822 }} </em></small>
+<h2 class="center">{{ page.title | downcase }}</h2>
+<div class="center">
+    <div class="subtext">{{ page.date | date: " %b %-d, %Y" }} | <span class="kinda-red">{{ page.categories }}</span></div>
+</div>
 
 {% if page.categories.size > 1 %}
 <small>tags:

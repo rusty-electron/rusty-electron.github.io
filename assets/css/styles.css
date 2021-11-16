@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
 html {
 	max-width: 1050px;
 	margin-left: auto;
@@ -9,7 +9,8 @@ html {
 	background-color: #222831;
 	padding-bottom: 200px;
 	font-size: 16px;
-	font-family: 'Roboto Mono', monospace;
+	/* font-family: 'Roboto Mono', monospace; */
+	font-family: 'Mulish';
 }
 
 a {color: #f2a365; }
@@ -21,6 +22,14 @@ a {color: #f2a365; }
 
 a:hover {color: lightblue; }
 
+.mono {
+	font-family: 'Roboto Mono';
+}
+
+.center {
+	text-align: center;
+}
+
 /* css for the header */
 h1{
 	margin-right: auto;
@@ -30,10 +39,12 @@ h1{
 h2{
 	margin: 15 0px;
 	padding: 10px 0;
+	font-family: 'Roboto Mono';
 }
 
 pre.highlight{
-	background-color: #222831;
+	background-color: #393e46;
+	
 	display: block;
 	padding: 8px;
 	/* color: #c2c2c2; */
@@ -61,22 +72,43 @@ pre.highlight{
 /* end of header css */
 
 .entry {
-	border-left: 10px solid #801336;
 	padding: 10px 10px 10px 10px;
-	border-radius: 0 20px 20px 0;
-	margin-bottom: 20px;
-	background-color: #393e46;
-	line-height: 1.4rem;
-	}
-
+}
 
 .small{
 	font-size: 0.5rem !important;
 }
 
+p{
+	font-size: 17px;
+	line-height: 1.6;
+}
 
-.entry h2 { font-size: 1.4rem;margin: 2px auto 10px auto; }
+.subtext{
+	text-transform: uppercase;
+	font-weight: 800;
+	font-size: 12px;
+	letter-spacing: .8px;
+	color: #aaa;
+	margin-bottom: 2rem;
+}
 
+.kinda-red{
+	color: #ff8080;
+}
+
+.entry h2 {
+	font-size: 1.9rem;
+	margin: 2px auto 10px auto; 
+}
+
+.entry h3{
+	font-size: 1.4rem;
+}
+
+.entry h4{
+	font-size: 1.2rem;
+}
 
 .entry code{
 	font-size: 17px;
@@ -142,12 +174,14 @@ blockquote{
 	background-color: #8d8d8d;
 	padding: 1rem;
 	border-radius: 0px 4px 4px 0px;
-	border-left: 10px solid #222831;
+	border-left: 10px solid #393e46;
 }
 
 blockquote p{
 	margin: 0;
 	padding: 0;
+	font-family: 'Roboto Mono';
+	font-size: 14px !important;
 }
 
 blockquote a{
@@ -189,11 +223,11 @@ blockquote a{
 	}
 
 	.entry{
-		border-left: 5px solid #696769;
+		/* border-left: 5px solid #696769;
 		margin-bottom: 15px;
 		margin-top: 15px;
 		border-radius: 0 8px 8px 0;
-		padding: 12px;
+		padding: 12px; */
 	}
 
 	.small{

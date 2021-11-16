@@ -11,7 +11,7 @@ title: blog
   <!-- default category -->
   {% if post.category != 'random' %} 
     <li>
-      <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
+      <h2><a class="noline mono" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
       {{ post.excerpt }}
     </li>
     {% endif %}

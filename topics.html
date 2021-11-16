@@ -1,5 +1,6 @@
 ---
 layout: default
+title: topics
 ---
 <h2>blog posts: topic-wise </h2>
 
@@ -11,7 +12,7 @@ layout: default
     <h3>{{category|first}}</h3>
     <ul>
     {% for post in category.last %}
-      <li><a class="noline" href="{{ post.url }}">{{ post.title }}</a></li>
+      <li><a class="noline mono" href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
     </ul>
 {% endfor %}
