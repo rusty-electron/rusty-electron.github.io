@@ -19,7 +19,7 @@ html {
 }
 
 a {color: #f2a365; }
-.link-inactive { color: #ececec; text-decoration: none; }
+.link-inactive, .link-inactive:hover { color: #ececec; text-decoration: none; }
 .noline { text-decoration: none;}
 .line { text-decoration: underline; }
 
@@ -147,6 +147,7 @@ img{
 
 .right{
 	text-align: center;
+	margin: 1rem;
 }
 
 .credit{
@@ -184,7 +185,7 @@ img{
 }
 
 blockquote{
-	background-color: #8d8d8d;
+	background-color: #a5a5a5;
 	padding: 1rem;
 	border-radius: 0px 4px 4px 0px;
 	border-left: 10px solid #393e46;
@@ -199,7 +200,7 @@ blockquote p{
 }
 
 blockquote a{
-	color: #8d2c4b;
+	color: #d11956;
 }
 
 hr{
