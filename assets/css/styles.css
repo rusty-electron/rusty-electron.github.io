@@ -67,6 +67,7 @@ pre.highlight{
 	display: flex;
 	flex-direction: row;
 	justify-content: flex-end;
+	flex-wrap: wrap;
 }
 
 .header a {
@@ -131,6 +132,7 @@ li::marker{
 
 ul, ol{
 	padding-bottom: 4px;
+	color: rgb(184, 184, 184);
 }
 
 .bimg{

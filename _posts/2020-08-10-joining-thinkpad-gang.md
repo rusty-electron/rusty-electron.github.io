@@ -15,6 +15,6 @@ Initially, I had no thought of purchasing linux hardware as opposed to a general
 * Video Card: Intel UHD Graphics (won't install steam, i promise)
 * Storage: 256GB SSD (I have boot time OCD)
 * Other interesting specs: close shutter on webcam, fingerprint reader on power button &lt;no-comments&gt;
-* *imp* OS: DOS
+* *imp* OS: DOS, definitely going to install `arch`
 
 The laptop should arrive around late August so this blog will be maintained through that machine after that point onwards.

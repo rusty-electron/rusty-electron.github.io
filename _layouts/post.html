@@ -1,21 +1,23 @@
 ---
 layout: default
 ---
-<div class="container">
+
 <div class='entry'>
 <h2 class="center">{{ page.title | downcase }}</h2>
 <div class="center">
-    <div class="subtext">{{ page.date | date: " %b %-d, %Y" }} | <span class="kinda-red">{{ page.categories }}</span></div>
+    <div class="subtext">{{ page.date | date: " %b %-d, %Y" }} | 
+        {% for cat in page.categories %}<span class="kinda-red">{{ cat }}{% if forloop.last %}{% else %}, {% endif %}</span>
+        {% endfor %}</div>
 </div>
 
-{% if page.categories.size > 1 %}
+<!-- {% if page.categories.size > 1 %}
 <small>tags:
     {% for cat in page.categories %}[<span class="yellow">{{ cat }}</span>]{% endfor %}
 </small>
-{% endif %}
+{% endif %} -->
 
 {{ content }}
 
 <div class="eop">~ end of post ~</div>
 </div>
-</div>
+
