@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,300;1,300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Mulish&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital@0;1&display=swap');
 html {
 	max-width: 1250px;
 	margin-left: auto;
@@ -207,6 +207,25 @@ hr{
 	margin-top: 2.5rem;
 	border: none;
 	border-top: .3px solid #545961;
+}
+
+.two-col{
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: space-around;
+}
+
+.two-col div img {
+	width: 350px;
+}
+
+.two-col .caption{
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	font-size: .9rem;
+	color:rgb(202, 105, 105);
 }
 
 /* for small screens*/
