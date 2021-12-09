@@ -6,7 +6,9 @@ category: algorithms
 katex: true
 ---
 
-When analyzing the running time of an algorithm we should first try to gather some empirical data by testing different input sizes and then recording run times.
+So you wrote a new algorithm for a task or maybe you are re-implementing a known algorithm and want to verify the time complexity, a mathematical analysis is the best way to do so but you could also arrive at the same result using two simpler methods that I discuss in this article.
+
+When analyzing the running time of an algorithm we should first gather some empirical data by testing  with different input sizes and then recording the running times.
 
 As an example, here I list the running time $$ T(n) $$ for various input size $$N$$. If you are testing your algorithm you should prepare a similar table.
 
@@ -41,25 +43,25 @@ $$
     </div>
 </div>
 
-By using the data analysis approach, we should first try to plot $$ T(n) $$ against $$N$$ and try to analyze the plot, in this step we can estimate if the relationship is linear or not. But usually we are benefited more by plotting the same on the `log-log` scale (base 2). If we do so, we are very likely to obtain a straight line and the slope of this line, $$b$$ can be used in the power law equation:
+By using the data analysis approach, we should first plot $$ T(n) $$ against $$N$$ and try to analyze the plot, in this step we can estimate if the relationship is linear (or not). But usually we are benefited more by plotting the same parameters on the `log-log` scale (base 2). If we do so, we are very likely to obtain a straight line and the slope of this line, $$b$$ can be used in the power law relationship:
 
-$$ T(n) = aN^b $$
+$$ T(n) = aN^b \tag{1}\label{first}$$
 
 where, $$a$$ is a constant that can be determined by substituting the rest of the parameters (more on this later).
 
 > Note: In many cases, we may not be able to find a line that passes through each of the data points in our observation table and in that case, you can use linear regression to find an approximate one.
 
-The equation of the obtained straight line is:
+The equation of the obtained straight line on the `log-log` scale is:
 
 $$ \log_2(T(N)) = b\log_2 N + c $$
 
-As evident, the slope of this line is $$b$$ and the x-intercept is $$c$$. Raising both sides of this equation to the power of 2, we get $$ T(N) = aN^b $$ where $$ a = 2^c $$.
+As evident, the slope of this line is $$b$$ and the x-intercept is $$c$$. Using both sides of this equation as exponents of 2, we get $$ T(N) = aN^b $$ where $$ a = 2^c $$.
 
-Using regression we found the slope of the line to be 2.999 and by substituting this value in the power law equation (along with a set of observation from the table), we get the value of c to be -33.2103 and therefore, $$a = 1.006 \times 10^{-10}$$. We arrive at a hypothesis that the running time of our algorithm can be determined for any value of input size $$N$$ as $$1.006 \times 10^{-10} \times N^{2.999} $$ seconds.
+Using [linear regression](https://en.wikipedia.org/wiki/Linear_regression) (code provided later) we found the slope of the line to be 2.999 and by substituting this value in the power law equation (see eqn. $$\ref{first}$$ ) (along with a set of observation from the table), we get the value of c to be -33.2103 and therefore, $$a = 1.006 \times 10^{-10}$$. We arrive at a hypothesis that the running time of our algorithm can be determined for any input size $$N$$ as $$1.006 \times 10^{-10} \times N^{2.999} $$ seconds.
 
 Now we can test our hypothesis by running the algorithm at different input sizes and then comparing the results with our predictions.
 
-**code example**: using linear regression to fit observations to a line and then predicting.
+**code example**: using linear regression to fit observations to a straight line and then predicting.
 ```python
 import numpy as np
 from sklearn.linear_model import LinearRegression
@@ -90,13 +92,13 @@ pred = 2 ** pred_log
 
 If there exists a power law relationship between $$T(n)$$ and $$N$$ for our algorithm, then we can use the *doubling hypothesis* as a quick way to estimate $$b$$ in power law equation.
 
-We need to prepare a table as shown below where the first two columns are the same as the previous table but the third column contains the ratio of the $$ T(n_1)/T(n_2) $$ where $$ n_1 = 2n_2 $$ (also note that each value of $$n$$ in the table is $$ 2 \times $$the previous value). The fourth column is $$ log_2(\text{value of ratio in the previous column}) $$ i.e. $$log_2(T(2n)/T(n))$$.
+We need to prepare a table as shown below where the first two columns are the same as the previous table but the third column contains the ratio of the $$ T(n_1)/T(n_2) $$ where $$ n_1 = 2n_2 $$ (also note that each value of $$n$$ in the table is $$ 2 \times $$the previous value). The fourth column is $$ log_2($$ value of ratio in the previous column $$) $$ i.e. $$log_2(T(2n)/T(n))$$.
 
 $$
 \begin{array} {|r|r|}\hline N & time (seconds) & ratio & lg\ ratio \\ \hline 250 & 0.0 & - & - \\ \hline 500 & 0.0 & 4.8 & 2.3 \\ \hline 1000 & 0.1 & 6.9 & 2.8 \\ \hline 2000 & 0.8 & 7.7 & 2.9 \\ \hline 4000 & 6.4 & 8.0 & 3.0 \\ \hline 8000 & 51.1 & 8.0 & 3.0 \\ \hline  \end{array}
 $$
 
-From the values in the table, it is evident that the value of ratio and the log of the ratio converges at a point (8.0 and 3.0 resp.) and the converged value of log of the ratio is the value of $$b$$.
+From the values in the table, it is evident that the value of ratio and the log of the ratio converge at a point (8.0 and 3.0 resp.) and the converged value of log of the ratio is the value of $$b$$.
 
 **Explanation:** The converged value of the ratio (third column) can be represented as:
 
@@ -108,7 +110,7 @@ $$ log_2(ratio) = log_2(2^b) = b $$
 
 > note: it is not possible to identify logarithmnic factors using this method
 
-In double hypothesis, we can estimate the value of $$a$$ by substituting $$b$$ in power law relationship for a large value of $$N$$ and then solve for $$a$$.
+In doubling hypothesis, we can estimate the value of $$a$$ by substituting $$b$$ in power law relationship for a large value of $$N$$ and then solve for $$a$$.
 
 Considering $$ N=8000, T(N) = 51.1$$ and using the value of $$b=3$$, we obtain:
 
