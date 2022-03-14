@@ -24,7 +24,7 @@ a {
     border-radius: 12px;
 }
 
-.fa-solid:last-child {
+.fa-solid:not(:first-child) {
     margin-left: 1rem;
 }
 

@@ -22,7 +22,9 @@ title: cooking
     <li>
       <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2> 
       {{ post.excerpt }}
-      <i class="fa-solid fa-utensils"></i> : {{ post.difficulty }} <i class="fa-solid fa-clock"></i> : {{ post.duration }}
+      <div>
+      <i class="fa-solid fa-utensils"></i> : {{ post.difficulty }} <i class="fa-solid fa-clock"></i> : {{ post.duration }} <i class="fa-solid fa-user-group"></i> : {{ post.serving }}
+      </div>
     </li>
   {% endfor %}
 </ul>
