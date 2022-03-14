@@ -2,7 +2,7 @@
 layout: post
 title: my note-making journey and vimwiki
 date: 2021-05-30 21:00 +0530
-category: productivity
+tags: productivity
 ---
 
 I like to make digital notes.

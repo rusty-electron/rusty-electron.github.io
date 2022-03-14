@@ -2,7 +2,7 @@
 layout: post
 title: algo running time and power law
 date: 2021-12-08 02:40 +0530
-category: algorithms
+tags: algorithms
 katex: true
 ---
 

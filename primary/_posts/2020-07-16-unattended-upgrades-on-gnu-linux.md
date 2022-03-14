@@ -2,7 +2,7 @@
 layout: post
 title: unattended upgrades on gnu/linux
 date: Thu, 16 Jul 2020 16:18:21 +0530
-category: linux
+tags: linux
 ---
 
 I run this site on a VPS and as for vpn I use OpenVPN that passes my traffic through a VPS. I am too lazy to periodically access one of these servers and manually run `sudo apt update && sudo apt upgrade`. I found these commands and config files that will periodically update the system and also reboot at a specific time if required for important kernel updates.

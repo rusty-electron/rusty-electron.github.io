@@ -2,7 +2,7 @@
 layout: post
 title: social circle, important?
 date: 2021-07-30 23:46 +0530
-category: random
+tags: random
 ---
 
 In the past few days I have started to realize how important an individual's social circle is in influencing his/her opinions, work culture, general interests, weekend pastime, etc. It is really essential that one keeps oneself in a circle of friends/colleagues that would help them actively advance towards their desired state in life.

@@ -2,7 +2,7 @@
 layout: post
 title: cli pdf utilities
 date: 2021-12-15 17:19 +0530
-category: linux
+tags: linux
 ---
 
 There have been multiple instances where I search for cli pdf utilies and always end up in stackoverflow searching for a tool that has minimal dependencies and with the required set of options. I usually end up using the utilies `pdfunite` and `pdfseparate` found in the `poppler` (arch) or `poppler-utils` (debian/ubuntu based) package. I occasionally find myself using `qpdf` or `gs` too. (will update)

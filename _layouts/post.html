@@ -6,7 +6,7 @@ layout: default
 <h2 class="center">{{ page.title | downcase }}</h2>
 <div class="center">
     <div class="subtext">{{ page.date | date: " %b %-d, %Y" }} | 
-        {% for cat in page.categories %}<span class="kinda-red">{{ cat }}{% if forloop.last %}{% else %}, {% endif %}</span>
+        {% for cat in page.tags %}<span class="kinda-red">{{ cat }}{% if forloop.last %}{% else %} {% endif %}</span>
         {% endfor %}</div>
 </div>
 

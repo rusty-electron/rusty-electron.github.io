@@ -2,7 +2,7 @@
 layout: post
 title: vibe check
 date: 2021-06-13
-category: random
+tags: random
 
 imageurl: https://source.unsplash.com/QonMStIYe74/300x300
 imagealt: vibe

@@ -8,15 +8,13 @@ title: blog
 <a class="noline" href="{{ './topics.html' | relative_url }}">[ view by topic ]</a>
 
 <ul class="narrow">
-  {% for post in site.posts %}
+  {% for post in site.categories.primary %}
   <!-- default category -->
-  {% if post.category != 'random' %} 
     <li>
       <h2><a class="noline mono" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
       {{ post.excerpt }}
       <hr>
     </li>
-    {% endif %}
   {% endfor %}
 </ul>
 

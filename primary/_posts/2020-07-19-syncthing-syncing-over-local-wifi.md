@@ -2,7 +2,7 @@
 layout: post
 title: syncthing - syncing over local wifi
 date: Sun, 19 Jul 2020 12:54:12 +0530
-category: tools
+tags: tools
 ---
 
 Sometime this year, I realized that manually managing a cloud folder in google drive/one drive is a time consuming process. One needs to open the drive website and then manually upload the files to be updates/copied. These websites are large and take quite a lot of time to load and I find it specially frustating when I am in hurry and the uploading process doesn't even start.

@@ -2,7 +2,7 @@
 layout: post
 title: LSP issues with opencv-python
 date: 2022-01-08 00:45 +0530
-category: python, short
+tags: python short
 ---
 
 I use the neovim plugin `nvim-lspconfig` and for python, it requires minimal setup and works fine most of the time. One issue that I repeatedly face when working on python projects involving image manipulation is the lack of code-completion and missing type stub errors for the `cv2` (opencv-python) package. The working solution is to manually generate type stubs for the package.

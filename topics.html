@@ -6,7 +6,7 @@ title: topics
 
 <a class="noline" href="{{ './blog.html' | relative_url }}">[ view list ]</a>
 
-{% assign sorted_cats = site.categories | sort %}
+{% assign sorted_cats = site.tags | sort %}
 
 {% for category in sorted_cats %}
     <h3>{{category|first}}</h3>

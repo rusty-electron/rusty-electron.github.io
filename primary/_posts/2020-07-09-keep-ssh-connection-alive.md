@@ -2,7 +2,7 @@
 layout: post
 title: keep ssh connection alive
 date: Thu, 09 Jul 2020 22:54:46 +0530
-category: tools
+tags: tools
 ---
 
 It is very annoying when I look up something in a different window and then switch back to the ssh terminal only to find out that the connection has timed out and I need to log in again.

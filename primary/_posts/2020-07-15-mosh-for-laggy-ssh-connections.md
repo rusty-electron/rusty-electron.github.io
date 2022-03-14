@@ -2,7 +2,7 @@
 layout: post
 title: mosh - for laggy ssh connections
 date: Wed, 15 Jul 2020 10:26:53 +0530
-category: tools
+tags: tools
 ---
 
 I have bad internet connection at home and I need to frequently connect to a VPS via ssh. When the connection is slow, there is a big lag in between my typing and the keystrokes appearing at the server terminal. This is especially worse when I need to edit files in `vim`. At one point I used WinSCP to edit the files in a GUI where it loads a local copy for editing and then copies the local edits to the server when I save it but I wanted a better solution for this, one where I don't need to leave the CLI. So, [mosh][1]{:target="_blank"} came to the rescue.

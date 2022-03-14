@@ -6,14 +6,12 @@ title: random
 <h2>random posts:</h2>
 
 <ul class="narrow">
-  {% for post in site.posts %}
+  {% for post in site.categories.random %}
   <!-- default category -->
-  {% if post.category == 'random' %} 
     <li>
       <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2>
       {{ post.excerpt }}
     </li>
-    {% endif %}
   {% endfor %}
 </ul>
 

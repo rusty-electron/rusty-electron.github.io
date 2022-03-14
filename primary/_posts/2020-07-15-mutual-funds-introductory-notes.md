@@ -2,7 +2,7 @@
 layout: post
 title: mutual funds introductory notes
 date: Wed, 15 Jul 2020 08:52:18 +0530
-category: general
+tags: general
 ---
 
 I have been studying a little about share markets and mutual funds investment and in near future I plan to invest some extra cash so just for records I wanted to make some notes about the topic.
