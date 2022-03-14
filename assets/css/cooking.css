@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;1,300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@400&display=swap');
+
+html {
+    background-color: #222222;
+}
+
+h2, h1 {
+    font-family: "Montserrat" !important;
+}
+
+a {
+    font-family: "Montserrat";
+    text-decoration: none;
+}
+
+.jumbo-img {
+    margin: 1rem;
+    display: flex;
+    height: 400px;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+}
+
+.fa-solid:last-child {
+    margin-left: 1rem;
+}
+
+.recipe-stats {
+    text-align: center;
+}
+
+.recipe-stats > div {
+    padding-bottom: 6px;
+}
+
+.recipe-stats > div > i {
+    padding: 0 4px;
+}
+
+blockquote {
+    padding: 0.6rem 1rem;
+}
+
+blockquote p {
+    font-size: 16px !important;
+    font-family: 'Mulish';
+}
+
+.warning {
+    border-color: #dbae54;
+}
+
+/* for small screens*/
+@media screen and (max-width: 600px) {
+    blockquote p {
+        font-size: 13px !important;
+    }
+}

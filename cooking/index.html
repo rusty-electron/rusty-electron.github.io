@@ -1,0 +1,30 @@
+---
+layout: default
+title: cooking
+---
+
+<div class="jumbo-img">
+  <img src="https://source.unsplash.com/random/400×400/?food,dish,tasty" alt="a random image of a dish">
+</div>
+<p class="yellow small right">
+  A random image from unsplash to increase appetite
+</p>
+
+<p>
+  Time for adulting. I will add my recipes here as I learn them.
+</p>
+
+<h2>recipes:</h2>
+
+<ul class="narrow">
+  {% for post in site.categories.cooking %}
+  <!-- default category -->
+    <li>
+      <h2><a class="noline" href="{{ post.url }}">{{ post.title | downcase }}</a></h2> 
+      {{ post.excerpt }}
+      <i class="fa-solid fa-utensils"></i> : {{ post.difficulty }} <i class="fa-solid fa-clock"></i> : {{ post.duration }}
+    </li>
+  {% endfor %}
+</ul>
+
+<div class="right"> this blog uses <a class="noline" target="_blank" href="https://jekyllrb.com/">jekyll</a></div>
