@@ -23,7 +23,7 @@ pdfunite sample1.pdf sample2.pdf sample.pdf
 
 ### extracting individual pages
 
-In many cases when you are submitting documents to a website, you end up scanning the hardcopies all at once and end up with a single pdf. If now the website requires you to submit them separately (which is usually the case), you can use `pdfseparate`.
+In many cases when you are submitting documents to a website, you scan the hardcopies all at once and end up with a single pdf. If now the website requires you to submit them separately (which is usually the case), you can use `pdfseparate`.
 
 * If you need all of the pages in the document as separate pdfs:
 ```sh
