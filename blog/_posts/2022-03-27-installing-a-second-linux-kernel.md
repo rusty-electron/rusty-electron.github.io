@@ -40,7 +40,6 @@ Here is a short guide on setting up a second kernel in your archlinux install (`
         GRUB_DEFAULT=saved
         GRUB_SAVEDEFAULT=true
         ```
-    
     * Save this file and exit the editor.
 
 3. generate a new grub config file
