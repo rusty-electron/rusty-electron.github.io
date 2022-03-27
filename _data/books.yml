@@ -1,4 +1,15 @@
-- name: the republic - plato
+- name: Probabilistic Machine Learning - Kevin P. Murphy
+  img: probml.png
+  tag: active
+
+- name: Calculus - L. Tarasov
+  img: calculus.jpg
+  tag: active
+
+- name: The Republic - Plato
   img: the-republic.jpg
-- name: layered money
+  tag: ab
+
+- name: Layered Money
   img: layered-money.jpg
+  tag: ab

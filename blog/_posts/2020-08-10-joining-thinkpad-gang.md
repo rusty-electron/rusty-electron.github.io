@@ -2,7 +2,7 @@
 layout: post
 title:  "joining thinkpad gang"
 date:   2020-08-10 18:39:04 +0530
-categories: linux
+tags: linux
 ---
 
 Yes, I have fallen for the infamous thinkpad meme and bought one. 
