@@ -258,6 +258,23 @@ pre.highlight {
 	margin: 12px 0;
 }
 
+/* csss for the chessboardjs board */
+.chessboard {
+	margin: 0.5rem auto;
+	width: 400px;
+	text-align: center;
+}
+
+.chessbox {
+	margin: 1.2rem 0;
+}
+
+.caption {
+	text-align: center;
+	font-style: italic;
+	font-size: .8rem;
+}
+
 /* for small screens*/
 @media screen and (max-width: 600px) {
 	.time-ago{
@@ -344,6 +361,11 @@ pre.highlight {
 	.book-item{
 		justify-content: center;
         margin-bottom: 10px;
+	}
+
+	.chessboard {
+		margin: 0rem auto;
+		width: min(100%, 300px);
 	}
 }
 

@@ -12,6 +12,15 @@
       <link rel="stylesheet" href="/assets/css/cooking.css">
     {% endif %}
     <link rel="shortcut icon" type="image/png" href="/assets/images/icons8-raspberry-pi-zero-48.png"/>
+  <!-- add chessboard.js (and jquery) -->
+  {% if page.tags contains "chess" %}
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"
+        integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2"
+        crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="/assets/css/chessboard-1.0.0.css">
+    <script src="/assets/js/chessboard-1.0.0.js"></script>
+  {% endif %}
   </head>
   <body>
     {% include navigation.html %}
@@ -33,6 +42,7 @@
   </div>
     
   </body>
+  <!-- load mathjax -->
   {% if page.katex %}
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
