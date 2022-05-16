@@ -224,6 +224,11 @@ blockquote a{
 	color: #d11956;
 }
 
+blockquote li {
+	font-family: 'Roboto Mono';
+	color: #2e2e2e;
+}
+
 hr{
 	margin-top: 2.5rem;
 	border: none;
@@ -262,7 +267,7 @@ pre.highlight {
 .chessboard {
 	margin: 0.5rem auto;
 	width: 400px;
-	text-align: center;
+	/* text-align: center; */ /* commenting fixes the extra padding-left in the spare pieces */
 }
 
 .chessbox {
@@ -365,7 +370,7 @@ pre.highlight {
 
 	.chessboard {
 		margin: 0rem auto;
-		width: min(100%, 300px);
+		width: min(100%, 400px) !important; /* dynamic resizing works in the chess library, just requires a page reload */
 	}
 }
 
