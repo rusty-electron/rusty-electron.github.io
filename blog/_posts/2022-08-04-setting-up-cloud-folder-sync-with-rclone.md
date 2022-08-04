@@ -136,7 +136,6 @@ MNT_NAME="gdrive"
 
 function sync_files() {
     # one way sync
-    # log errors as well
     rsync -av --delete /home/$USER/myfiles/folder1/ $MNT_PT/folder1
     # add more commands here
 
@@ -145,7 +144,6 @@ function sync_files() {
 }
 
 # mount rclone drive
-# run sync_files if successful
 rclone mount "$MNT_NAME":/ $MNT_PT &
 
 # check if mounted successfully using rclone
