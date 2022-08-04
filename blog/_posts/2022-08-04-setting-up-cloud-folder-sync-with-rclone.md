@@ -4,9 +4,9 @@ title: setting up cloud folder sync with rclone
 tags: linux guide
 ---
 
-Having some (or all of) your files synced with a cloud service provider is a good call. It is helpful to have backup this way and it makes the files accessible from any device (provided you have an internet connection). But most cloud providers provide client programs only for Windows or Mac. As of 2022, only Dropbox provides an official client for Linux. But sadly, their free plan only provides 5 GB of storage. I, being broke, prefer to have the 15 GB of free storage provided by Google drive. It is enough to have my most important files backed up. So I started looking up hacky ways to set up a system that syncs my files with Google drive. 
+Having some (or all of) your files synced with a cloud service provider is a good call. It is helpful to have backup in this form and it makes the files accessible from any device (provided you have an internet connection). But most cloud providers provide client programs only for Windows or Mac. As of 2022, only Dropbox provides an official client for Linux. But sadly, their free plan only provides 5 GB of storage. I, being broke, prefer to have the 15 GB of free storage provided by Google drive. It is enough to have my most important files backed up. So I started looking up hacky ways to set up a system that syncs my files with Google drive. 
 
-After much testing, I finally settled on this method that uses [`rclone`](https://rclone.org/) for mounting cloud storage. `rclone` works with almost all cloud providers and all their plans (both free and premium) so you should have no issues with it.
+After testing different methods, I finally settled on this method that uses [`rclone`](https://rclone.org/) for mounting cloud storage. `rclone` works with almost all cloud providers and all their plans (both free and premium) so you should have no issues with it.
 
 ### setting up rclone
 
@@ -32,7 +32,7 @@ Open a terminal and run the following command:
 rclone config
 ```
 
-From this point, based on what cloud storage provider you are using, you should following the steps listed in the [rclone documentation][1].
+From this point, based on what cloud storage provider you are using, you should follow the steps listed in the [rclone documentation][1].
 
 [1]: https://rclone.org/docs/#configure
 
@@ -50,7 +50,7 @@ Once, you have configured rclone, launch `rclone-browser` and you should see the
 
 * In `rclone-browser`, double-click on your cloud drive and select `Mount`
 
-    You will be asked to choose a mount point. Choose the empty folder you created above.
+    You will be asked to choose a mount point. Choose the empty folder you created in the previous step.
 
     If it is successful, you should see the cloud drive mounted in the folder you chose. You can visit the folder using your file manager and verify the contents.
 
@@ -75,9 +75,9 @@ fusermount -uz <local_mount_point>
 
 You can choose between two types of sync:
 * **unidirectional sync:**
-    * **local-to-cloud:** files are synced from your local machine to the cloud drive. Files in the cloud that are not present locally are deleted. The use case is for when you need to keep a copy of your local files on the cloud.
-    * **cloud-to-local:** files are synced from the cloud drive to your local machine. Files in the local machine that are not present in the cloud are deleted. The use case is for when you need to download files from the cloud and not make any changes to it from your end.
-* **bidirectional sync:** files are synced from the local machine to the cloud drive and vice versa. The changes are propagated in both directions.
+    * **local-to-cloud:** Files are synced from your local machine to the cloud drive. Files in the cloud that are not present locally are deleted. The use case is for when you need to keep a copy of your local files on the cloud.
+    * **cloud-to-local:** Files are synced from the cloud drive to your local machine. Files in the local machine that are not present in the cloud are deleted. The use case is for when you need to download files from the cloud and not make any changes to it from your end.
+* **bidirectional sync:** Files are synced from the local machine to the cloud drive and vice versa. The changes are propagated in both directions.
 
 #### unidirectional sync
 
@@ -122,7 +122,7 @@ osync.sh --initiator=/home/user/folder2/documents --target=/home/user/cloud_mnt/
 
 As mentioned before, you can use cron jobs for periodic sync.
 
-> **Note:** you should not use `rsync` and `osync.sh` for the same folder. `osync.sh` create some hidden files for its working so if you use `rsync` on the same directory. It will sync these hidden files to the destination as well and cause problems.
+> **Note:** you should not use `rsync` and `osync.sh` for the same folder. `osync.sh` creates some hidden files for its working so if you use `rsync` on the same directory. It will sync these hidden files to the destination as well and cause problems when you run `osync.sh` the next time.
 
 ### example script
 
@@ -150,9 +150,9 @@ fusermount -uz /home/user/cloud_mnt
 
 * [unison](https://www.cis.upenn.edu/~bcpierce/unison/)
 
-    I tried out `unison` first for bidirectional sync but gave up as file permission issues appeared when I tried to sync it with the cloud drive. You can choose to ignore the permission issues and sync the files anyway by specifying it in the config file, see this [answer on SO](https://superuser.com/questions/1166185/making-unison-ignore-file-property-differences). Later, I found `osync.sh` which turned out to be a better tool.
+    I tried out `unison` first for bidirectional sync but gave up as file permission issues appeared when I tried to sync it with the cloud drive. You can choose to ignore the permission issues and sync the files anyway by specifying options in the config file, see this [answer on SO](https://superuser.com/questions/1166185/making-unison-ignore-file-property-differences). Later, I found `osync.sh` which turned out to be a better tool.
 
 * [freefilesync](https://freefilesync.org/)
 
-    It is a gui tool for bidirectional sync and it is available in the AUR as `freefilesync` and `freefilesync-bin`. I avoided it as it has a lot of dependencies and the source package has a large compile time. 
+    It is a gui tool for bidirectional sync and it is available in the AUR as `freefilesync` and `freefilesync-bin`. I avoided it as it has a lot of dependencies and the source package took very long to compile. 
 
