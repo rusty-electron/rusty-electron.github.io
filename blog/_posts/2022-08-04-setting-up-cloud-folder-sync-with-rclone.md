@@ -131,19 +131,37 @@ Here is a example script that you can use/extend after adding your own paths:
 ```bash
 #!/bin/sh
 
-LOG_FILE=/home/user/log/sync.log
-MNT_PT=/home/user/cloud_mnt
+MNT_PT=/home/$USER/drive_mnt
+MNT_NAME="gdrive"
+
+function sync_files() {
+    # one way sync
+    # log errors as well
+    rsync -av --delete /home/$USER/myfiles/folder1/ $MNT_PT/folder1
+    # add more commands here
+
+    # unmount rclone drive
+    fusermount -uz $MNT_PT
+}
 
 # mount rclone drive
-# log errors as well
-rclone mount gdrive:/ $MNT_PT & >> $LOG_FILE 2>&1
-# one way sync
-# log errors as well
-rsync -av --delete /home/user/folder1/ $MNT_PT/folder1 >> $LOG_FILE 2>&1
-rsync -av --delete /home/user/folder2/documents/ $MNT_PT/documents >> $LOG_FILE 2>&1
+# run sync_files if successful
+rclone mount "$MNT_NAME":/ $MNT_PT &
 
-# unmount rclone drive
-fusermount -uz /home/user/cloud_mnt
+# check if mounted successfully using rclone
+# wait in while loop and sleep 1
+# until mount is successful
+# check if mount is successful by grepping `mount` for $MNT_NAME
+# if successful, run sync_files
+while true; do
+    if grep -q $MNT_NAME /proc/mounts; then
+        echo "Mounted successfully"
+        sync_files
+        break
+    fi
+    sleep 1
+    echo "waiting for mount..."
+done
 ```
 
 ### experience with other alternatives
