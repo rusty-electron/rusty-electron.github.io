@@ -4,12 +4,12 @@ title: rustyelectron's blog
 ---
 
 <h2 class="mono">hi, i am pritom.</h2>
-I  create stuff using programming and electronics.
+I create stuff using programming and electronics.
 
 ### interests:
 * deep learning
-* embedded systems
-* control systems
+* computer vision
+* philosophy
 {: class="mono"}
 
 view [[online resume]][2]{: class="noline"}

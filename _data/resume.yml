@@ -8,10 +8,9 @@
 name: Pritom Gogoi
 tagline: "Deep Learning Researcher · Autonomous Driving & Computer Vision"
 bio: >-
-  M.Sc. INFOTECH student at the University of Stuttgart, currently completing
-  my Master's thesis at the Bosch Center for AI on uncertainty-aware map
-  generation for autonomous driving. My interests span deep learning,
-  probabilistic modeling, and computer vision.
+  M.Sc. INFOTECH student at the University of Stuttgart, currently <br>looking for 
+  PhD. opportunities. My interests span deep learning, probabilistic modeling 
+  and computer vision.
 
 email: pritom.gogoi101@gmail.com
 
@@ -49,7 +48,7 @@ experience:
       Worked under Fabian Kögel (supervised by Dr. Andreas Bulling) on extending
       MTEX, an explainability framework, by implementing input-attribution methods
       for multimodal transformer models like ViLT. Integrated AttnLRP, integrated
-      gradients, and input × gradients into the framework and ran perturbation experiments.
+      gradients and input × gradients into the framework and ran perturbation experiments.
 
   - title: Korro AI
     role: AICV Intern
@@ -104,7 +103,7 @@ education:
     detail: "Grade: 1.5"
     bullets:                                                     # (markdown ok)
       - "**Master's Thesis:** Uncertainty-Aware Map Generation for Motion Prediction in Autonomous Driving."
-      - "**Research Project — Diffusion-based Gaze Estimation:** A gaze-estimation-from-a-distance model using conditional score-based diffusion to model the temporal coordination between gaze, head, and body orientations."
+      - "**Research Project — Diffusion-based Gaze Estimation:** A gaze-estimation-from-a-distance model using conditional score-based diffusion to model the temporal coordination between gaze, head and body orientations."
       - "**Relevant Coursework:** Deep Learning, Machine Learning, Matrix Computations in Signal Processing, Computer Architecture & Organization, Operating Systems, GPU Programming, Signals and Systems."
 
   - title: Assam Engineering College
@@ -155,7 +154,7 @@ projects:
   - title: Open-Source Implementations of Research Papers
     description: >-
       Implementations of Computer Vision and Deep Learning papers — CGAN, Neural Style
-      Transfer, Convolutional Pose Machines, and more.
+      Transfer, Convolutional Pose Machines and more.
     link: https://github.com/rusty-electron
     link_label: github
 

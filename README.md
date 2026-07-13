@@ -26,7 +26,7 @@ You can easily deploy a jekyll site such as this one at github pages by followin
 
 ## Optional: `jemdoc` resume
 
-I also host a jemdoc resume page at [`rustyelectron.live/resume`](https://rustyelectron.live/resume/). See [jemdoc][5]'s page for instructions to learn to prepare a jemdoc site.
+I also host a jemdoc resume page at [`rusty-electron.github.io/resume`](https://rusty-electron.github.io/resume/). See [jemdoc][5]'s page for instructions to learn to prepare a jemdoc site.
 
 ### steps to host
 
@@ -71,7 +71,7 @@ clean :
 ## Change log:
 * as of Nov 2021, the blog post page theme is based on [this blog](https://snarky.ca/).
 
-[1]: https://rustyelectron.live
+[1]: https://rusty-electron.github.io
 [2]: https://jekyllrb.com/docs/installation/#requirements
 [3]: https://wiki.archlinux.org/title/ruby#Setup
 [4]: https://jekyllrb.com/docs/github-pages/
