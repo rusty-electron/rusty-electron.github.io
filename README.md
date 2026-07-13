@@ -24,55 +24,21 @@ this repo contains the code for my [blog][1], it uses jekyll for generating stat
 
 You can easily deploy a jekyll site such as this one at github pages by following [these instructions][4]. Another way is to push this folder to a github repo and then use services such as [netlify](https://netlify.com) that allows concurrent building i.e., everytime you push changes to the github repo, netlify rebuilds your site by following your build instructions and then hosts your subsequently generated static pages.
 
-## Optional: `jemdoc` resume
+## resume
 
-I also host a jemdoc resume page at [`rusty-electron.github.io/resume`](https://rusty-electron.github.io/resume/). See [jemdoc][5]'s page for instructions to learn to prepare a jemdoc site.
+I host a resume page at [`rusty-electron.github.io/resume`](https://rusty-electron.github.io/resume/). It is a single, self-contained page that Jekyll renders from a data file — no external tooling required.
 
-### steps to host
+* content lives in `_data/resume.yml` (plain YAML; the fields marked `(markdown ok)` accept simple markdown such as links and inline `code`)
+* the layout and styling live in `resume/index.html`, which loops over `site.data.resume`
+* **to update the resume, edit `_data/resume.yml` only** — you rarely need to touch the template
 
-Follow these instructions to host your jemdoc page at `yourblog.com/<path>`.
-1. create `<path>` directory in your jekyll site folder
-2. generate html files using `jemdoc` or use my `makefile` (see below)
-3. place them in your `<path>` directory
-
-> Note that you must have an `index.html` file in your <path> directory
-
-Jekyll will copy your `<path>` directory to the `_site` directory and your jekyll build will contain the jemdoc generated html files. If all goes well, your jemdoc pages will be hosted at `yourblog.com/<path>`.
-
-#### makefile for jemdoc
-
-```makefile
-DOCS=index extra education # replace with the name(s) of jemdoc page(s) you created
-
-# index -> index.html -> html/index.html
-HDOCS=$(addsuffix .html, $(DOCS))
-PHDOCS=$(addprefix html/, $(HDOCS))
-
-.PHONY : docs
-docs : $(PHDOCS)
-
-.PHONY : update
-update : $(PHDOCS)
-	@echo -n 'Copying to server...'
-	cp $(PHDOCS) <path directory>
-	@echo ' done.'
-
-html/%.html : %.jemdoc MENU
-	jemdoc -o $@ $<
-
-.PHONY : clean
-clean :
-	-rm -f html/*.html
-
-```
-
-> `jemdoc` is quite old and in modern web, it has its shortcomings. I have future plans to rewrite jemdoc in python 3 and update it to use html5.
+The page is print-friendly: a `@media print` block switches it to a light theme, so you can export it to PDF straight from the browser.
 
 ## Change log:
+* as of Jul 2026, the resume page was rewritten from `jemdoc` to a Jekyll data-driven page (see `_data/resume.yml`).
 * as of Nov 2021, the blog post page theme is based on [this blog](https://snarky.ca/).
 
 [1]: https://rusty-electron.github.io
 [2]: https://jekyllrb.com/docs/installation/#requirements
 [3]: https://wiki.archlinux.org/title/ruby#Setup
 [4]: https://jekyllrb.com/docs/github-pages/
-[5]: http://jemdoc.jaboc.net/
