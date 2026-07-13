@@ -1,186 +1,258 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN"
-  "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+---
+permalink: /resume/
+# This template renders _data/resume.yml — edit the YAML, not this file.
+---
+{%- assign r = site.data.resume -%}
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<meta name="generator" content="jemdoc, see http://jemdoc.jaboc.net/" />
-<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
-<link rel="stylesheet" href="jemdoc.css" type="text/css" />
-<title>Pritom Gogoi &ndash; resume page</title>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>{{ r.name }} — Resume</title>
+<meta name="description" content="Resume of {{ r.name }} — {{ r.tagline }}" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,300;0,400;0,600;0,700;1,400&family=Roboto+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  :root {
+    --bg: #222831;
+    --surface: #2b323d;
+    --border: #3a424e;
+    --text: #ececec;
+    --muted: #9aa4b2;
+    --accent: #f2a365;
+    --accent-soft: rgba(242, 163, 101, 0.12);
+    --mono: 'Roboto Mono', ui-monospace, monospace;
+    --sans: 'Mulish', system-ui, -apple-system, sans-serif;
+  }
+
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: var(--sans);
+    font-weight: 400;
+    line-height: 1.6;
+    font-size: 16px;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .page { max-width: 820px; margin: 0 auto; padding: 64px 28px 96px; }
+
+  a {
+    color: var(--accent);
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+    transition: border-color .15s ease;
+  }
+  a:hover { border-bottom-color: var(--accent); }
+
+  /* ---- Header ---- */
+  header { margin-bottom: 44px; }
+  .name {
+    font-size: 2.4rem; font-weight: 700; letter-spacing: -0.02em;
+    line-height: 1.1; margin: 0 0 6px;
+  }
+  .tagline {
+    font-family: var(--mono); font-size: 0.9rem; color: var(--accent); margin: 0 0 18px;
+  }
+  .bio { color: var(--muted); max-width: 62ch; margin: 0 0 20px; }
+
+  .meta {
+    display: flex; flex-wrap: wrap; gap: 8px 18px;
+    font-size: 0.88rem; font-family: var(--mono);
+  }
+  .meta a { color: var(--text); }
+  .meta a:hover { color: var(--accent); }
+  .meta .sep { color: var(--border); }
+
+  .downloads { margin-top: 18px; display: inline-flex; gap: 10px; flex-wrap: wrap; }
+  .btn {
+    display: inline-block; padding: 7px 14px; font-family: var(--mono);
+    font-size: 0.82rem; color: var(--accent); background: var(--accent-soft);
+    border: 1px solid var(--border); border-radius: 6px;
+  }
+  .btn:hover { border-color: var(--accent); }
+
+  /* ---- Sections ---- */
+  section { margin-top: 40px; }
+  h2.section-title {
+    font-family: var(--mono); font-size: 0.82rem; font-weight: 500;
+    text-transform: uppercase; letter-spacing: 0.18em; color: var(--muted);
+    margin: 0 0 20px; padding-bottom: 8px; border-bottom: 1px solid var(--border);
+  }
+
+  .entry { margin-bottom: 24px; }
+  .entry:last-child { margin-bottom: 0; }
+  .entry-head {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; flex-wrap: wrap;
+  }
+  .entry-title { font-size: 1.02rem; font-weight: 600; margin: 0; }
+  .entry-title .role { font-weight: 400; font-style: italic; color: var(--muted); }
+  .entry-date { font-family: var(--mono); font-size: 0.8rem; color: var(--muted); white-space: nowrap; }
+  .entry-sub { font-size: 0.9rem; color: var(--muted); margin: 2px 0 8px; }
+  .entry p { margin: 6px 0; }
+  .entry-desc { color: var(--text); }
+
+  ul.clean { margin: 8px 0 0; padding-left: 18px; }
+  ul.clean li { margin: 5px 0; color: var(--text); }
+  ul.clean li::marker { color: var(--accent); }
+  ul.clean strong { font-weight: 600; }
+
+  /* publications */
+  .pub-authors { font-size: 0.9rem; color: var(--muted); margin: 3px 0 2px; }
+  .pub-venue { font-size: 0.86rem; color: var(--muted); font-family: var(--mono); margin: 0 0 4px; }
+
+  /* skills */
+  .skill-row { display: flex; gap: 14px; margin-bottom: 12px; flex-wrap: wrap; }
+  .skill-label {
+    flex: 0 0 150px; font-family: var(--mono); font-size: 0.8rem;
+    color: var(--accent); padding-top: 2px;
+  }
+  .skill-items { flex: 1 1 320px; color: var(--text); }
+  @media (max-width: 520px) { .skill-label { flex-basis: 100%; } }
+
+  code {
+    font-family: var(--mono); font-size: 0.86em;
+    background: var(--surface); padding: 1px 5px; border-radius: 4px; color: var(--accent);
+  }
+
+  footer {
+    margin-top: 56px; padding-top: 18px; border-top: 1px solid var(--border);
+    font-family: var(--mono); font-size: 0.78rem; color: var(--muted);
+  }
+
+  /* ---- Print / PDF ---- */
+  @media print {
+    :root {
+      --bg: #ffffff; --surface: #f4f4f4; --border: #dddddd;
+      --text: #1a1a1a; --muted: #555555; --accent: #b25e10; --accent-soft: #f7ecdf;
+    }
+    body { font-size: 11pt; }
+    .page { padding: 0; max-width: none; }
+    .downloads { display: none; }
+    a { border-bottom: none; }
+    section, .entry { page-break-inside: avoid; }
+  }
+</style>
 </head>
 <body>
-<table summary="Table for page layout." id="tlayout">
-<tr valign="top">
-<td id="layout-menu">
-<div class="menu-category">resume</div>
-<div class="menu-item"><a href="index.html" class="current">homepage</a></div>
-<div class="menu-item"><a href="extra.html">extracurriculars</a></div>
-<div class="menu-item"><a href="education.html">education</a></div>
-</td>
-<td id="layout-content">
-<div id="toptitle">
-<h1>Pritom Gogoi &ndash; resume page</h1>
-</div>
-<h2>Bio:</h2>
-<p>I am an Instrumentation Engg. Graduate from Assam Engineering College, Guwahati. As of now, I am working on developing my skills in deep learning research and embedded development.</p>
-<p>Mail - <a href="mailto:pritom.gogoi101@gmail.com">pritom.gogoi101@gmail.com</a> |  <a href="mailto:pritom16-392@aec.ac.in">pritom16-392@aec.ac.in</a></p>
-<p>Download resume [ <a href="./resume-full.pdf">full</a> ] [ <a href="./resume.pdf">single-page</a> ]</p>
-<h3>Social links:</h3>
-<ul>
-<li><p>Github: <a href="https://github.com/rusty-electron">rusty-electron</a></p>
-</li>
-<li><p>Linkedin: <a href="https://www.linkedin.com/in/pritom-gogoi/">profile</a></p>
-</li>
-<li><p>Medium: <a href="mailto:https://medium.com/@rustyelectron">@rustyelectron</a></p>
-</li>
-<li><p>Twitter: <a href="https://twitter.com/rustyelectron">profile</a></p>
-</li>
-</ul>
-<h2>Internships and Training:</h2>
-<h3>IIT, Guwahati | <i>Research Intern</i></h3>
-<p>Oct 2020 - Current | Guwahati, AS<br />
-I am currently working under Dr. Manas Kamal Bhuyan and Mr. H. Pallab Jyoti Dutta
-for developing an algorithm for hand keypoints localization based on Convolutional
-Pose Machines and Attention Augmented Convolutional blocks.</p>
-<div style="text-align: center">
-<img src="./cpm.gif"/ width="500">
-</div>
-<div class="infoblock">
-<div class="blocktitle">update:</div>
-<div class="blockcontent">
-<p>github repo will be added soon</p>
-</div></div>
-<h3>University of Warwick, UK | <i>Visiting student</i></h3>
-<p>Feb 2020 – Mar 2020 | Coventry, Warwickshire<br />
-I received a scholarship under the Winter Overseas Fellowship program and was able
-to work under Dr. Layi Alatise and Dr. Jose Ortiz Gonzalez for developing a LabVIEW
-test setup for evaluation of the reliability of SiC Power MOSFETs.</p>
-<h3>IIIT, Guwahati | <i>Summer Intern</i></h3>
-<p>Jul 2018 – Sept 2018 | Mirza, AS<br />
-Worked under the guidance of Dr. Rakesh Matam to develop an Intelligent Parking
-System that detects the presence of a vehicle using an array of sensors and a novel
-heuristic algorithm.</p>
-<h2>Publications</h2>
-<h3>An UAV Assisted Multi-sensor based Smart Parking system</h3>
-<p>IEEE International Conference on Computer Communications<br />
-<i>6-9 July 2020 | Ottawa, Canada</i> - <a href="https://ieeexplore.ieee.org/abstract/document/9163040/">[view paper]</a></p>
-<h3>Object Detection and Tracking turret based on Cascade Classifiers and Single Shot Detectors</h3>
-<p>2020 International Conference on Computational Performance Evaluation<br />
-<i>NEHU, Shillong, India</i> - <a href="https://ieeexplore.ieee.org/abstract/document/9200139/">[view paper]</a></p>
-<h2>Competitions</h2>
-<h3>Plant Pathology 2021 - FGVC8 | Kaggle</h3>
-<ul>
-<li><p>The main objective of the competition was to develop machine learning-based models to accurately classify a given leaf image from the test dataset to a particular disease category, and to identify an individual disease from multiple disease symptoms on a single leaf image.</p>
-</li>
-<li><p>completed at 62nd position (Top 10%) among 626 participating teams</p>
-</li>
-</ul>
-<h2>Summer School</h2>
-<h3>5th CVIT Summer School of AI - Attendee</h3>
-<p>Organized by IIIT Hyderabad, <i>1-31 August 2021</i> - <a href="http://cvit.iiit.ac.in/summerschool2021/index.php">[view site]</a></p>
-<ul>
-<li><p>It consisted of several lectures on topics in AI/ML delivered by speakers from Deep Mind, MILA, Google Brain, FAIR, etc.<br /></p>
-</li>
-</ul>
-<h2>Projects</h2>
-<p>A 16-bit Hack Assembly General Purpose Computer</p>
-<ul>
-<li><p>custom ALU with 16K RAM, 32K ROM</p>
-</li>
-<li><p>wrote an assembler for the CPU in <tt>python</tt></p>
-</li>
-<li><p>part of the curriculum of the <tt>nand2tetris</tt> course</p>
-</li>
-<li><p>view project page on <a href="https://github.com/rusty-electron/nand2tetris">github</a></p>
-</li>
-</ul>
-<p>Analog Circuit-Block for designing an Artificial Neural Networks</p>
-<ul>
-<li><p>designed a Gilbert's Multiplier circuit for multiplying <tt>weights and neuron inputs</tt></p>
-</li>
-<li><p>based on the multiplier circuit designed by Barrie Gilbert, see <a href="https://ieeexplore.ieee.org/document/6499939/">paper</a></p>
-</li>
-<li><p>view project page on <a href="https://github.com/rusty-electron/fossee-esim-hackathon">github</a></p>
-</li>
-</ul>
-<p>Semantic segmentation of leaves using UNet based model</p>
-<ul>
-<li><p>pytorch implementation of unet model for segmentation</p>
-</li>
-<li><p>view on <a href="https://github.com/gvil-research/leaf-segmentation-unet">github</a></p>
-</li>
-</ul>
-<p>Implementation of Neural Style Transfer</p>
-<ul>
-<li><p>pytorch implementation of the paper <i>A Neural Algorithm of Artistic Style</i></p>
-</li>
-<li><p>view on <a href="https://github.com/rusty-electron/neural-style-transfer-pytorch">github</a></p>
-</li>
-</ul>
-<p>Active Contributor to Open Source projects</p>
-<ul>
-<li><p>contributed to over 10 FOSS projects</p>
-</li>
-<li><p>Kharagpur Winter of Code &rsquo;18 Contributor, view <a href="https://drive.google.com/file/d/1Ct0tyBbeZNax31Md3UWlWvX12w6HLbwd/view?usp=sharing">credential</a></p>
-</li>
-<li><p>Hacktoberfest &rsquo;18, &rsquo;19, &rsquo;21 Participant</p>
-</li>
-</ul>
-<p>Image Processing Based Object Tracking Turret</p>
-<ul>
-<li><p>The proposed device was to be able to detect and track COCO objects
-using a CNN model. The motion of the tracking turret was controlled by
-PID controller.</p>
-</li>
-<li><p>view demo on <a href="https://www.youtube.com/watch?v=Z2COTNBM-Gc">youtube</a></p>
-</li>
-</ul>
-<p>Timer-Controlled Automatic Charger</p>
-<ul>
-<li><p>designed a automatic charger using the ESP8266 microcontroller which
-was capable of controlling phone charger or any AC appliance via WiFi
-webserver or manual device controls.</p>
-</li>
-</ul>
-<p>Bitoverflow - Open Source Contribution Event</p>
-<ul>
-<li><p>organized this event which is similar to Kharagpur Winter of Code or
-GirlScript Summer of Code where participants work on the project of
-their choice and make valuable contributions to open source projects.</p>
-</li>
-</ul>
-<h2>MOOCS and Certifications</h2>
-<ul>
-<li><p>Build a Modern Computer from First Principles: From Nand to Tetris</p>
-</li>
-<li><p>Deep Learning Specialization | Coursera</p>
-<ul>
-<li><p>Convolutional Neural Networks</p>
-</li>
-<li><p>Improving Deep Neural Networks: Hyperparameter Tuning, Regularization and Optimization</p>
-</li>
-<li><p>Neural Networks and Deep Learning</p>
-</li></ul>
-</li>
-<li><p>Fundamentals Of Digital Image And Video Processing | Coursera</p>
-</li>
-<li><p>PCB Design using KiCAD | NIT-K</p>
-</li>
-<li><p>An Intuitive Introduction to Probability</p>
-</li>
-<li><p>Microprocessors And Microcontrollers | NPTEL</p>
-</li>
-<li><p>Digital Circuits | NPTEL</p>
-</li>
-<li><p>Introduction to Biostatistics | NPTEL</p>
-</li>
-</ul>
-<div id="footer">
-<div id="footer-text">
-Page generated 2021-12-15 17:51:24 IST, by <a href="http://jemdoc.jaboc.net/">jemdoc</a>.
-</div>
-</div>
-</td>
-</tr>
-</table>
+<main class="page">
+
+  <header>
+    <h1 class="name">{{ r.name }}</h1>
+    <p class="tagline">{{ r.tagline }}</p>
+    <p class="bio">{{ r.bio }}</p>
+
+    <div class="meta">
+      <a href="mailto:{{ r.email }}">{{ r.email }}</a>
+      {%- for link in r.links %}
+      <span class="sep">/</span>
+      <a href="{{ link.url }}" target="_blank" rel="noopener noreferrer">{{ link.label }}</a>
+      {%- endfor %}
+    </div>
+
+    {%- if r.downloads %}
+    <div class="downloads">
+      {%- for d in r.downloads %}
+      <a class="btn" href="{{ d.url }}">{{ d.label }}</a>
+      {%- endfor %}
+    </div>
+    {%- endif %}
+  </header>
+
+  {%- comment %} ===== EXPERIENCE ===== {% endcomment %}
+  <section>
+    <h2 class="section-title">Experience</h2>
+    {%- for e in r.experience %}
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">{{ e.title }}{% if e.role %} <span class="role">— {{ e.role }}</span>{% endif %}</h3>
+        {%- if e.date %}<span class="entry-date">{{ e.date }}</span>{% endif %}
+      </div>
+      {%- if e.location %}<p class="entry-sub">{{ e.location }}</p>{% endif %}
+      {%- if e.description %}<p class="entry-desc">{{ e.description }}</p>{% endif %}
+      {%- if e.bullets %}
+      <ul class="clean">
+        {%- for b in e.bullets %}
+        <li>{{ b | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+
+  {%- comment %} ===== EDUCATION ===== {% endcomment %}
+  <section>
+    <h2 class="section-title">Education</h2>
+    {%- for e in r.education %}
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">{{ e.title }}{% if e.role %} <span class="role">— {{ e.role }}</span>{% endif %}</h3>
+        {%- if e.date %}<span class="entry-date">{{ e.date }}</span>{% endif %}
+      </div>
+      <p class="entry-sub">
+        {%- if e.location %}{{ e.location }}{% endif %}
+        {%- if e.location and e.detail %} · {% endif %}
+        {%- if e.detail %}{{ e.detail | markdownify | remove: '<p>' | remove: '</p>' | strip }}{% endif %}
+      </p>
+      {%- if e.bullets %}
+      <ul class="clean">
+        {%- for b in e.bullets %}
+        <li>{{ b | markdownify | remove: '<p>' | remove: '</p>' | strip }}</li>
+        {%- endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+    {%- endfor %}
+  </section>
+
+  {%- comment %} ===== PUBLICATIONS ===== {% endcomment %}
+  <section>
+    <h2 class="section-title">Publications</h2>
+    {%- for p in r.publications %}
+    <div class="entry">
+      <h3 class="entry-title">{{ p.title }}</h3>
+      {%- if p.authors %}<p class="pub-authors">{{ p.authors | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+      {%- if p.venue %}<p class="pub-venue">{{ p.venue }}{% if p.link %} — <a href="{{ p.link }}">{{ p.link_label | default: "link" }}</a>{% endif %}</p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+
+  {%- comment %} ===== PROJECTS ===== {% endcomment %}
+  <section>
+    <h2 class="section-title">Projects</h2>
+    {%- for p in r.projects %}
+    <div class="entry">
+      <div class="entry-head">
+        <h3 class="entry-title">{{ p.title }}</h3>
+        {%- if p.link %}<span class="entry-date"><a href="{{ p.link }}">{{ p.link_label | default: "link" }} →</a></span>{% endif %}
+      </div>
+      {%- if p.description %}<p class="entry-desc">{{ p.description | markdownify | remove: '<p>' | remove: '</p>' | strip }}</p>{% endif %}
+    </div>
+    {%- endfor %}
+  </section>
+
+  {%- comment %} ===== INTERESTS & SKILLS ===== {% endcomment %}
+  <section>
+    <h2 class="section-title">Interests &amp; Skills</h2>
+    {%- for s in r.skills %}
+    <div class="skill-row">
+      <div class="skill-label">{{ s.label }}</div>
+      <div class="skill-items">{{ s.items }}</div>
+    </div>
+    {%- endfor %}
+  </section>
+
+  <footer>
+    <a href="/">← rustyelectron.live</a>
+  </footer>
+
+</main>
 </body>
 </html>

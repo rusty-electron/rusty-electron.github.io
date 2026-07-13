@@ -1,0 +1,173 @@
+# =============================================================
+#  Resume content — edit this file, not resume/index.html
+#  Fields marked "(markdown ok)" accept links like [text](url),
+#  **bold**, *italic* and inline `code`.
+#  Source: cv.pdf (last updated July 2026)
+# =============================================================
+
+name: Pritom Gogoi
+tagline: "Deep Learning Researcher · Autonomous Driving & Computer Vision"
+bio: >-
+  M.Sc. INFOTECH student at the University of Stuttgart, currently completing
+  my Master's thesis at the Bosch Center for AI on uncertainty-aware map
+  generation for autonomous driving. My interests span deep learning,
+  probabilistic modeling, and computer vision.
+
+email: pritom.gogoi101@gmail.com
+
+# Social / contact links shown under the bio
+links:
+  - label: GitHub
+    url: https://github.com/rusty-electron
+  - label: LinkedIn
+    url: https://www.linkedin.com/in/pritom-gogoi/
+  - label: YouTube
+    url: https://www.youtube.com/c/pritom
+
+# Single "View CV" button (cv.pdf lives in the repo root)
+downloads:
+  - label: "View CV (PDF)"
+    url: /cv.pdf
+
+# ---------------------------------------------------------------
+experience:
+  - title: Bosch Center for Artificial Intelligence
+    role: Master Thesis Student
+    date: Jul 2025 – Jan 2026
+    location: Renningen, DE
+    description: >-
+      Proposed a Low-Rank and Diagonal (LRD) covariance model for probabilistic
+      online map generation in autonomous driving. Integrated uncertainty into
+      downstream trajectory prediction via novel encoding schemes and confidence
+      score-based feature modulation, leading to SOTA results on the nuScenes dataset.
+
+  - title: Collaborative Artificial Intelligence
+    role: Wissenschaftliche Hilfskraft (Research Assistant)
+    date: Oct 2025 – Jan 2026
+    location: Stuttgart, DE
+    description: >-
+      Worked under Fabian Kögel (supervised by Dr. Andreas Bulling) on extending
+      MTEX, an explainability framework, by implementing input-attribution methods
+      for multimodal transformer models like ViLT. Integrated AttnLRP, integrated
+      gradients, and input × gradients into the framework and ran perturbation experiments.
+
+  - title: Korro AI
+    role: AICV Intern
+    date: Sep 2024 – Mar 2025
+    location: Darmstadt, DE
+    description: >-
+      Extended an in-house human pose estimation framework to predict relative depth
+      values for pose joints. Developed a pipeline to enrich human pose datasets with
+      depth annotations by leveraging DepthAnythingV2, a monocular depth estimation model.
+
+  - title: MORESOPHY GmbH
+    role: Working Student
+    date: Apr 2024 – Jun 2024
+    location: München, DE
+    description: >-
+      Developed predictive ML models to forecast client contact frequency and timing
+      using a rich dataset with 50+ attributes. Emphasized explainable predictions to
+      reveal key features influencing outcomes, aiming for impactful business insights.
+
+  - title: SimTech Group for Dynamical Systems
+    role: Wissenschaftliche Hilfskraft (Research Assistant)
+    date: May 2023 – Sep 2024
+    location: Stuttgart, DE
+    bullets:                                                     # (markdown ok)
+      - "**Bayesflow:** Worked under Marvin Schmitt to support the development of the open-source package *Bayesflow*, which enables efficient Bayesian inference with deep learning."
+      - "**ARTSM:** Worked under Christian Pfaendner on an open-source Python package for backmapping of coarse-grained molecular structures into atomistic resolution using machine learning."
+
+  - title: Human Computer Interaction & Cognitive Systems Lab
+    role: Wissenschaftliche Hilfskraft (Research Assistant)
+    date: May 2023 – Nov 2023
+    location: Stuttgart, DE
+    description: >-
+      Worked under Dr. Mihai Bâce on a deep learning pipeline for generating human eye
+      images using image-to-image translation. Used models like GroundingDINO for object
+      detection and Segment Anything (SAM) for semantic segmentation.
+
+  - title: Indian Institute of Technology, Guwahati
+    role: Research Assistant
+    date: Oct 2020 – Jun 2022
+    location: Guwahati, IN
+    description: >-
+      Built open-source implementations of hand pose estimation models, including the
+      Attention-based 2D Hand Pose Estimation model by Santavas et al. and the
+      Convolutional Pose Machines paper by Wei et al. Both used the TensorFlow framework.
+
+# ---------------------------------------------------------------
+education:
+  - title: Universität Stuttgart
+    role: M.Sc. in INFOTECH
+    date: Oct 2022 – Present
+    location: Stuttgart, DE
+    detail: "Grade: 1.5"
+    bullets:                                                     # (markdown ok)
+      - "**Master's Thesis:** Uncertainty-Aware Map Generation for Motion Prediction in Autonomous Driving."
+      - "**Research Project — Diffusion-based Gaze Estimation:** A gaze-estimation-from-a-distance model using conditional score-based diffusion to model the temporal coordination between gaze, head, and body orientations."
+      - "**Relevant Coursework:** Deep Learning, Machine Learning, Matrix Computations in Signal Processing, Computer Architecture & Organization, Operating Systems, GPU Programming, Signals and Systems."
+
+  - title: Assam Engineering College
+    role: B.E. in Instrumentation Engineering
+    date: Aug 2016 – Jul 2020
+    location: Guwahati, IN
+    detail: "Percentage: 84.13"
+    bullets:
+      - "**Bachelor's Thesis — Image Processing Based Object Tracking Turret:** A servo turret prototype controlled by a Raspberry Pi 4 that detects and tracks COCO objects using a MobileNet model, with motion controlled by a PID controller."
+      - "**Relevant Coursework:** Multivariate Calculus, Linear Algebra, Probability & Statistics, Digital System Design, Data Structures & Algorithms, Embedded Systems Development, Digital Image Processing."
+
+# ---------------------------------------------------------------
+publications:
+  - title: "Uncertainty Matters: Structured Probabilistic Online Mapping for Motion Prediction in Autonomous Driving"
+    authors: "**P. Gogoi**, F. Janjoš, B. Yang and A. Look"     # (markdown ok)
+    venue: "arXiv:2603.20076 · planned for ICRA 2027"
+    link: https://arxiv.org/abs/2603.20076
+    link_label: view on arXiv
+  - title: "An UAV-Assisted Multi-sensor Based Smart Parking System"
+    authors: "**P. Gogoi**, J. Dutta, R. Matam, M. Mukherjee"
+    venue: "IEEE Intl. Conference on Computer Communications (INFOCOM) · Ottawa, Canada, Jul 2020"
+    link: https://ieeexplore.ieee.org/abstract/document/9163040/
+    link_label: view paper
+  - title: "ART-SM: Boosting Fragment-Based Backmapping by Machine Learning"
+    authors: "C. Pfaendner, V. Korn, **P. Gogoi**, B. Unger and K. Pluhackova"
+    venue: "Journal of Chemical Theory and Computation (2025)"
+
+# ---------------------------------------------------------------
+projects:
+  - title: GPU Implementation of a JPEG Encoder in C++
+    description: >-
+      A GPU-accelerated JPEG encoder in C++ that improves image encoding/decoding
+      throughput by leveraging NVIDIA CUDA for high-performance parallel processing.
+    link: https://github.com/rusty-electron/jpeg-encoder-opencl
+    link_label: github
+  - title: Visual World Study using a Gazepoint Eyetracker
+    description: >-
+      Used the Gazepoint GP3 eyetracker for precise gaze-pattern analysis to study the
+      cognitive mechanisms underlying real-time language comprehension.
+    link: https://github.com/rusty-electron/visual_world_paradigm_project
+    link_label: github
+  - title: 16-bit General-Purpose Computer
+    description: >-
+      Designed a 16-bit CPU with a custom instruction set based on the self-taught
+      `nand2tetris` curriculum, and wrote a Python assembler for its instruction set.
+    link: https://github.com/rusty-electron/nand2tetris
+    link_label: github
+  - title: Open-Source Implementations of Research Papers
+    description: >-
+      Implementations of Computer Vision and Deep Learning papers — CGAN, Neural Style
+      Transfer, Convolutional Pose Machines, and more.
+    link: https://github.com/rusty-electron
+    link_label: github
+
+# ---------------------------------------------------------------
+skills:
+  - label: Languages
+    items: "Python, C++, C, MATLAB/Octave, Assembly, Bash, VHDL"
+  - label: Tools & Frameworks
+    items: "Linux, PyTorch, TensorFlow, Git, Agentic Coding, NumPy, OpenCV, OpenCL, LaTeX, Hugging Face, FastAPI, MLOps, GIMP, vim, Docker, Elasticsearch/OpenSearch, mmpose, OpenMMLab, Rerun"
+  - label: Soft Skills
+    items: "Adaptability, Communication, Problem solving, Creativity, Teamwork"
+  - label: Spoken Languages
+    items: "English & Hindi (Professional), German (Elementary), Assamese (Native)"
+  - label: Hobbies
+    items: "Bouldering, Hiking, Long-distance running, Biking, Chess, Video games"
