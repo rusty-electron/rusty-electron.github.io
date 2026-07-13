@@ -2,9 +2,21 @@
   img: probml.png
   tag: active
 
+- name: Fahrenheit 451 - Ray Bradbury
+  img: fahrenheit-451.jpg
+  tag: active
+
+- name: 12 Rules for Life - Jordan B. Peterson
+  img: 12-rules-for-life.jpg
+  tag: active
+
+- name: Crime and Punishment - Fyodor Dostoevsky
+  img: crime-and-punishment.jpg
+  tag: active
+
 - name: Calculus - L. Tarasov
   img: calculus.jpg
-  tag: active
+  tag: done
 
 - name: The Republic - Plato
   img: the-republic.jpg

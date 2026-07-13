@@ -18,7 +18,16 @@ title: books
 
 ### books read
 
-\* will add later *
+<div class="book-container">
+    {% for book in site.data.books %}
+        {% if book.tag == "done" %}
+            <div class="book-item">
+            <img src="assets/images/{{ book.img }}" width="200px">
+            <p class="right">{{ book.name }}</p>
+            </div>
+        {% endif %}
+	{% endfor %}
+</div>
 
 ### books abandoned (temporarily 🥲)
 
