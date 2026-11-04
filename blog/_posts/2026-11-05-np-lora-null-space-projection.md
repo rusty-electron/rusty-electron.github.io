@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "NP-LoRA: Null Space Projection for Subject-Style LoRA Fusion"
-date:   2026-11-05 00:55:00 +0100
+date:   2026-11-04 20:00:00 +0100
 tags: ml lora wip
 katex: true
 ---
