@@ -36,7 +36,6 @@ $$
         <img src="/assets/images/algo-time/plot1.png">
         <p class="caption">Fig: \(T(N)\) vs. \(N\)</p>
     </div>
-
     <div>
         <img src="/assets/images/algo-time/plot2.png">
         <p class="caption">Fig: \(\log_2T(N)\) vs. \(\log_2 N\)</p>

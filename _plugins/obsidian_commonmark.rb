@@ -16,7 +16,7 @@ module Jekyll
           Commonmarker.to_html(content.delete_prefix(MARKER), options: {
             extension: { math_dollars: true, table: true, strikethrough: true, autolink: true, tasklist: true },
             render: { unsafe: true }
-          }, plugins: { syntax_highlighter: nil })
+          }, plugins: { syntax_highlighter: { theme: 'base16-ocean.dark' } })
         end
       end
     end

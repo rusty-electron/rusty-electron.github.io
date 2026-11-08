@@ -52,7 +52,7 @@ h2{
 	font-family: 'Roboto Mono';
 }
 
-pre.highlight{
+pre.highlight, pre[lang]{
 	background-color: #393e46;
 
 	display: block;
@@ -263,7 +263,7 @@ li p {
 	margin: 12px 0;
 }
 
-pre.highlight {
+pre.highlight, pre[lang] {
 	margin: 12px 0;
 }
 
