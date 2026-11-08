@@ -44,7 +44,13 @@
     
   </body>
   <!-- load mathjax -->
-  {% if page.katex %}
+  {% if page.math %}
+  <script>
+    document.querySelectorAll('[data-math-style]').forEach(function (element) {
+      var display = element.dataset.mathStyle === 'display';
+      element.textContent = (display ? '\\[' : '\\(') + element.textContent + (display ? '\\]' : '\\)');
+    });
+  </script>
   <script type="text/javascript" async
     src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
   </script>

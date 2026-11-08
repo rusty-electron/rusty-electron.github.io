@@ -12,7 +12,7 @@ jekyll_timeago:
 
 permalink: /:categories/:title:output_ext
 
-markdown: kramdown
+markdown: ObsidianCommonmark
 
 kramdown:
   input: GFM

@@ -2,27 +2,27 @@
 
 this repo contains the code for my [blog][1], it uses jekyll for generating static pages.
 
-## build locally
+## Build and preview locally
 
-* install `ruby`, you may follow instructions from [jekyll docs][2].
-> note to arch users, i had issues with PATH when I followed the official docs -- the instructions at [archwiki][3] worked (as always).
+Install Ruby 4.0 and Bundler 4.0.16, then from the repository root run:
 
-* install the rubygems, `jekyll` and `bundler`
+```sh
+bundle install
+bundle exec jekyll serve --future --disable-disk-cache
+```
 
-`gem install jekyll bundler`
+Open http://127.0.0.1:4000/ and press Ctrl+C to stop the server. The `--future` option includes future-dated posts. Math-enabled posts use `math: true` in front matter, `$...$` for inline math and `$$...$$` for display math, matching Obsidian. The remaining pages retain Kramdown.
 
-* clone this repo and `cd` inside
+To check the generated math and site compatibility, run:
 
-`git clone https://github.com/rusty-electron/blog.git`
+```sh
+bundle exec jekyll build --future --disable-disk-cache
+bundle exec ruby scripts/check_math.rb
+```
 
-* use bundler to install other requirements listed in `./Gemfile`
-`bundle`
+## Deploy
 
-* run `bundle exec jekyll serve --livereload` to run the live server locally. At this step, jekyll generates the static pages and saves inside the folder `./_site`.
-
-## deploy
-
-You can easily deploy a jekyll site such as this one at github pages by following [these instructions][4]. Another way is to push this folder to a github repo and then use services such as [netlify](https://netlify.com) that allows concurrent building i.e., everytime you push changes to the github repo, netlify rebuilds your site by following your build instructions and then hosts your subsequently generated static pages.
+The GitHub Actions workflow builds and checks the site on pushes to `main`, and deploys the resulting `_site` artifact to GitHub Pages. The repository's Pages source must be set to **GitHub Actions**. Pull requests run the build and checks without deploying.
 
 ## resume
 
